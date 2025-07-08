@@ -209,144 +209,154 @@
   <script>
 
 
-    const questions = [
+   const questions = [
 
-  {
-    text: "Lisa hat gestern im Unterricht einen großen Fehler ______.",
-    options: ["gemacht", "begangen", "getan", "genommen"],
-    correct: 1
-  },
-  {
-    text: "Diese Aufgabe könnte manchen Schülern Schwierigkeiten ______.",
-    options: ["bringen", "geben", "bereiten", "setzen"],
-    correct: 2
-  },
-  {
-    text: "Ich möchte über das Thema mehr ______ in Erfahrung.",
-    options: ["geben", "bringen", "holen", "nehmen"],
-    correct: 1
-  },
-  {
-    text: "Es ist unhöflich, jemandem ______ Wort zu fallen.",
-    options: ["ins", "aufs", "über", "beim"],
-    correct: 0
-  },
-  {
-    text: "Das fällt nicht in meinen ______.",
-    options: ["Arbeitsbereich", "Aufgabenbereich", "Machtbereich", "Wissensbereich"],
-    correct: 1
-  },
-  {
-    text: "Lass mich bitte meinen Gedanken zu Ende ______.",
-    options: ["machen", "führen", "nehmen", "sprechen"],
-    correct: 1
-  },
-  {
-    text: "Alles sollte bei der Veranstaltung in Ordnung ______.",
-    options: ["kommen", "bringen", "gehen", "laufen"],
-    correct: 2
-  },
-  {
-    text: "In dieser Diskussion habe ich ______.",
-    options: ["recht", "richtig", "wahr", "logisch"],
-    correct: 0
-  },
-  {
-    text: "Der Politiker wird heute Abend eine Rede ______.",
-    options: ["sprechen", "führen", "halten", "machen"],
-    correct: 2
-  },
-  {
-    text: "Für diese Position kommt nur eine Person ______.",
-    options: ["infrage", "in Frage", "zur Frage", "mit Frage"],
-    correct: 0
-  },
-  {
-    text: "Nach langem Überlegen kamen sie endlich zu einem ______.",
-    options: ["Ergebnis", "Entschluss", "Urteil", "Ende"],
-    correct: 1
-  },
-  {
-    text: "Ich lege großen Wert ______ Pünktlichkeit.",
-    options: ["bei", "mit", "über", "auf"],
-    correct: 3
-  },
-  {
-    text: "Der Bericht soll Informationen ______ über den Vorfall.",
-    options: ["liefern", "sagen", "berichten", "teilen"],
-    correct: 0
-  },
-  {
-    text: "Die Schüler müssen Vorbereitungen ______ für die Klassenfahrt.",
-    options: ["machen", "nehmen", "treffen", "geben"],
-    correct: 2
-  },
-  {
-    text: "Sie konnte die schwierige Situation gut ______.",
-    options: ["regeln", "lösen", "meistern", "kontrollieren"],
-    correct: 2
-  },
-  {
-    text: "Wenn man etwas sagen will, sollte man sich ______ Wort melden.",
-    options: ["zum", "an", "mit", "zu"],
-    correct: 3
-  },
-  {
-    text: "Ich nehme dich beim ______: Du hast versprochen, zu helfen.",
-    options: ["Versprechen", "Wort", "Satz", "Schwur"],
-    correct: 1
-  },
-  {
-    text: "Wir sollten das Projekt jetzt in Angriff ______.",
-    options: ["bringen", "nehmen", "setzen", "fangen"],
-    correct: 1
-  },
-  {
-    text: "Am Flughafen wurden die Gäste herzlich in ______ genommen.",
-    options: ["Empfang", "Besuch", "Kontakt", "Acht"],
-    correct: 0
-  },
-  {
-    text: "Ich bin leider nicht in der ______, dir zu helfen.",
-    options: ["Zeit", "Position", "Lage", "Macht"],
-    correct: 2
-  },
-  {
-    text: "Ich bin der ______, dass das eine gute Idee ist.",
-    options: ["Meinung", "Ansicht", "Überzeugung", "Sicht"],
-    correct: 0
-  },
-  {
-    text: "Wir werden dich rechtzeitig in Kenntnis ______.",
-    options: ["setzen", "bringen", "zeigen", "stellen"],
-    correct: 0
-  },
-  {
-    text: "Man darf Kinder nicht zu sehr unter ______ setzen.",
-    options: ["Last", "Zwang", "Druck", "Kontrolle"],
-    correct: 2
-  },
-  {
-    text: "Ich stehe auf dem ______, dass man mehr investieren sollte.",
-    options: ["Aspekt", "Gedankengang", "Punkt", "Standpunkt"],
-    correct: 3
-  },
-  {
-    text: "Dieses Thema sollte zur Diskussion ______.",
-    options: ["gesetzt", "kommen", "gestellt", "gemacht"],
-    correct: 2
-  },
-  {
-    text: "Kann ich dir bitte eine Frage ______?",
-    options: ["machen", "sagen", "stellen", "geben"],
-    correct: 2
-  },
-  {
-    text: "Wir können euch die Geräte gern zur Verfügung ______.",
-    options: ["bieten", "halten", "stellen", "lassen"],
-    correct: 2
-  },
+  // 1. stellen – trennbar
+  { text: "Ich stelle den Stuhl ___.", options: ["auf", "ab"], correct: 0 },
+  { text: "Er stellt sich der Klasse ___.", options: ["um", "vor"], correct: 1 },
+  { text: "Sie stellt ihre Bilder ___.", options: ["aus", "ab"], correct: 0 },
+  { text: "Wir stellen neue Mitarbeiter ___.", options: ["ein", "an"], correct: 0 },
+  { text: "Bitte stelle die Möbel ___.", options: ["um", "ein"], correct: 0 },
+
+  // 1. stellen – untrennbar
+  { text: "Ich ___stelle eine Pizza.", options: ["be", "er"], correct: 0 },
+  { text: "Wir ___stellen einen Plan.", options: ["ver", "er"], correct: 1 },
+  { text: "Er ___stellt mir eine Lüge.", options: ["unter", "ver"], correct: 0 },
+  { text: "Sie ___steckt das Geschenk.", options: ["ver", "be"], correct: 1 },
+  { text: "Die Möbel wurden ___gestellt.", options: ["her", "er"], correct: 1 },
+
+  // 2. kommen – trennbar
+  { text: "Kommst du ___?", options: ["an", "mit"], correct: 1 },
+  { text: "Er kommt morgen ___.", options: ["um", "ein"], correct: 0 },
+  { text: "Wann kommt der Zug ___?", options: ["an", "aus"], correct: 0 },
+  { text: "Sie kommt heute Abend ___.", options: ["ab", "mit"], correct: 1 },
+  { text: "Ein Gewitter kommt ___.", options: ["auf", "ab"], correct: 0 },
+
+
+  // 2. kommen – untrennbar
+  { text: "Ich ___komme ein Geschenk.", options: ["be", "vor"], correct: 0 },
+  { text: "Der Dieb ___kam der Polizei.", options: ["ent", "er"], correct: 0 },
+  { text: "Die Wohnung ist völlig ___gekommen.", options: ["herunter", "auf"], correct: 0 },
+  { text: "Mich ___kam ein schlechtes Gefühl.", options: ["ver", "über"], correct: 1 },
+  { text: "So etwas kommt oft ___.", options: ["aus", "vor"], correct: 1 },
+
+
+  // 3. gehen – trennbar
+  { text: "Wir gehen heute Abend ___.", options: ["aus", "an"], correct: 0 },
+  { text: "Willst du ___ gehen nach Spanien?", options: ["auf", "mit"], correct: 1 },
+  { text: "Geh bitte ___!", options: ["weg", "an"], correct: 0 },
+  { text: "Er geht heute Abend ___.", options: ["aus", "ein"], correct: 0 },
+  { text: "Jetzt geht es ___!", options: ["los", "an"], correct: 0 },
+
+
+  // 3. gehen – untrennbar
+  { text: "Er ___geht einen Fehler.", options: ["be", "ver"], correct: 0 },
+  { text: "Ihm ___geht nichts.", options: ["ent", "be"], correct: 0 },
+  { text: "Die Zeit ___geht schnell.", options: ["ver", "ab"], correct: 0 },
+  { text: "Sie ___geht einen Fehler.", options: ["an", "be"], correct: 1 },
+  { text: "Ich will die Regel nicht ___gehen.", options: ["über", "auf"], correct: 0 },
+  
+  
+
+  // 4. nehmen – trennbar
+  { text: "Ich nehme 20kg ___.", options: ["ab", "auf"], correct: 0 },
+  { text: "Nimmst du dein Buch ___?", options: ["ein", "mit"], correct: 1 },
+  { text: "Er nimmt das Angebot ___.", options: ["an", "ab"], correct: 0 },
+  { text: "Sie nimmt ihre Aussage ___.", options: ["zurück", "ein"], correct: 0 },
+  { text: "Wir nehmen das Gespräch ___.", options: ["auf", "ab"], correct: 0 },
+
+  // 4. nehmen – untrennbar
+  { text: "Er ___nimmt sich schlecht.", options: ["be", "ent"], correct: 0 },
+  { text: "Die Polizei ___nimmt den Zeugen.", options: ["ver", "unter"], correct: 0 },
+  { text: "Wir ___nehmen etwas.", options: ["aus", "unter"], correct: 1 },
+  { text: "Sie ___nimmt das Projekt.", options: ["ab", "über"], correct: 1 },
+  { text: "Ich ___nehme die Daten dem Bericht.", options: ["über", "ent"], correct: 1 },
+
+  // 5. schreiben – trennbar
+  { text: "Schreib den Text bitte noch mal sauber ___.", options: ["ab", "ein"], correct: 0 },
+  { text: "Ich schreibe mir seine Nummer ___.", options: ["auf", "bei"], correct: 0 },
+  { text: "Er geht zur Tafel und schreibt die Lösung ___.", options: ["ein", "an"], correct: 1 },
+  { text: "Sie schreibt sich an der Uni ___.", options: ["ab", "ein"], correct: 1 },
+  { text: "Wir schreiben den Gedanken ___.", options: ["ein", "auf"], correct: 1 },
+
+  // 5. schreiben – untrennbar
+  { text: "Ich ___schreibe das Bild.", options: ["be", "ver"], correct: 0 },
+  { text: "Der Arzt ___schreibt Medikamente.", options: ["unter", "ver"], correct: 1 },
+  { text: "Sie ___schreibt die Datei.", options: ["über", "an"], correct: 0 },
+  { text: "Er ___schreibt den Vertrag.", options: ["an", "unter"], correct: 1 },
+  { text: "Ich ____schreibe mir Klahrheit.", options: ["er", "ver"], correct: 0 },
+// 6. arbeiten – trennbar
+{ text: "Wir arbeiten ___.", options: ["zusammen", "ab"], correct: 0 },
+{ text: "Sie arbeiten gut ___.", options: ["an", "mit"], correct: 1 },
+{ text: "Ich arbeite morgen ___.", options: ["vor", "auf"], correct: 0 },
+{ text: "Er arbeitet die Aufgaben ___.", options: ["ab", "aus"], correct: 1 },
+{ text: "Sie arbeiten den Plan ___.", options: ["aus", "vor"], correct: 0 },
+
+// 6. arbeiten – untrennbar
+{ text: "Ich ___arbeite die Anfrage.", options: ["er", "be"], correct: 0 },
+{ text: "Sie ___arbeitet die Daten.", options: ["ver", "be"], correct: 0 },
+{ text: "Er ___arbeitet den Text.", options: ["ab", "über"], correct: 1 },
+{ text: "Sie ___arbeitet die Aufgaben.", options: ["be", "über"], correct: 1 },
+{ text: "Wir ___arbeiten das Konzept.", options: ["er", "be"], correct: 0 },
+
+// 7. spielen – trennbar
+{ text: "Komm, spiel ___!", options: ["mit", "ab"], correct: 0 },
+{ text: "Er spielt das Lied ___.", options: ["an", "vor"], correct: 1 },
+{ text: "Wir spielen das Scenario ___.", options: ["durch", "ab"], correct: 0 },
+{ text: "Sie spielt das Video ___.", options: ["ab", "auf"], correct: 0 },
+{ text: "Ich spiele noch ein bisschen ___.", options: ["ein", "mit"], correct: 1 },
+
+// 7. spielen – untrennbar
+{ text: "Er ___spielt sein Geld.", options: ["ver", "be"], correct: 0 },
+{ text: "Sie ___spielen die Bühne.", options: ["ver", "be"], correct: 1 },
+{ text: "Ich ___spiele den Film.", options: ["über", "ver"], correct: 0 },
+{ text: "Sie ___spielt den Gegner.", options: ["be", "um"], correct: 0 },
+{ text: "Er ___spielt seinen Ruf.", options: ["um", "ver"], correct: 1 },
+
+// 8. tragen – trennbar
+{ text: "Er füllt die Suppe ___.", options: ["ein", "aus"], correct: 0 },
+{ text: "Sie trägt sich in die Liste ___.", options: ["aus", "ein"], correct: 1 },
+{ text: "Ich trage die Zeitungen ___.", options: ["aus", "ab"], correct: 0 },
+{ text: "Er trägt sein Anliegen an mich her___.", options: ["ab", "an"], correct: 1 },
+{ text: "Sie trägt die Daten ___.", options: ["ein", "an"], correct: 0 },
+
+// 8. tragen – untrennbar
+{ text: "Ich ___trage den Lärm nicht.", options: ["ver", "er"], correct: 0 },
+{ text: "Wir ___tragen uns wieder.", options: ["ver", "über"], correct: 0 },
+{ text: "Sie ___trägt das Spiel live.", options: ["über", "ab"], correct: 0 },
+{ text: "Der Preis ___trägt zehn Euro.", options: ["ab", "be"], correct: 1 },
+{ text: "Er ___zieht die Steuern.", options: ["hinter", "ver"], correct: 0 },
+
+// 9. setzen – trennbar
+{ text: "Ich setze die Brille ___.", options: ["auf", "ab"], correct: 0 },
+{ text: "Wir setzen einen Termin ___.", options: ["ein", "an"], correct: 1 },
+{ text: "Sie setzt die Idee ___.", options: ["um", "ab"], correct: 0 },
+{ text: "Er setzt sich ___.", options: ["auf", "hin"], correct: 1 },
+{ text: "Wir setzen das Kind ___.", options: ["ab", "hin"], correct: 0 },
+
+// 9. setzen – untrennbar
+{ text: "Sie ___setzt den Platz.", options: ["be", "ab"], correct: 0 },
+{ text: "Er ___setzt den Kollegen.", options: ["ab", "ver"], correct: 1 },
+{ text: "Ich ___setze den Text.", options: ["an", "über"], correct: 0 },
+{ text: "Wir setzen den Plan ___.", options: ["ab", "um"], correct: 1 },
+{ text: "Sie ___setzen das Haus.", options: ["be", "ab"], correct: 0 },
+
+// 10. ziehen – trennbar
+{ text: "Ich ziehe meine Jacke ___.", options: ["aus", "ab"], correct: 0 },
+{ text: "Sie zieht das Hemd ___.", options: ["aus", "um"], correct: 0 },
+{ text: "Wir ziehen nächste Woche ___.", options: ["ab", "um"], correct: 1 },
+{ text: "Er zieht nach Berlin ___.", options: ["um", "ab"], correct: 0 },
+{ text: "Das Kind zieht den Wagen ___.", options: ["weg", "hinterher"], correct: 1 },
+
+// 10. ziehen – untrennbar
+{ text: "Wir ___ziehen die Wohnung.", options: ["be", "ver"], correct: 0 },
+{ text: "Das Kind ___zieht das Gesicht.", options: ["ver", "über"], correct: 0 },
+{ text: "Er zieht das Projekt ___.", options: ["über", "durch"], correct: 1 },
+{ text: "Sie ___zieht das Konto.", options: ["über", "ab"], correct: 0 },
+{ text: "Die Eltern ___ziehen das Kind.", options: ["er", "ab"], correct: 0 }
+  
     ];
+
 
 
     let currentQuestion = 0;
