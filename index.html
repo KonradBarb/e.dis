@@ -181,7 +181,7 @@
 </head>
 <body>
   <div class="start-screen">
-    <img src="logoo.png" alt="Logo" class="logo">
+    <img src="logo.png" alt="Logo" class="logo">
     <h1>Swipe left or right!</h1>
     <button class="start-button" onclick="startQuiz()">Los geht’s!</button>
   </div>
@@ -205,160 +205,96 @@
       <a href="https://www.instagram.com/jazzupyourgerman/" target="_blank">📸</a>
     </div>
   </div>
+<script>
+const questions = [
+  { text: "Konversation", options: ["conversation", "translation"], correct: 0 },
+  { text: "Als ich nach Deutschland (um)gezogen bin.", options: ["When I moved to Germany.", "When I went on holiday to Germany."], correct: 0 },
+  { text: "Ich lasse das marinierte Fleisch 3 Stunden ziehen.", options: ["I let the marinated meat soak for 3 hours.", "I eat the marinated meat immediately."], correct: 0 },
+  { text: "Ich muss das Fleisch drei Stunden ziehen lassen.", options: ["I have to let the meat soak for three hours.", "I have to cook the meat immediately."], correct: 0 },
 
-  <script>
+  { text: "Abwechslung", options: ["variation / change", "boredom"], correct: 0 },
+  { text: "Variation", options: ["repetition", "variation"], correct: 1 },
+  { text: "(nicht sehr) abwechslungsreich", options: ["(not very) varied", "very exciting"], correct: 0 },
+  { text: "immer neue Sachen", options: ["always new things", "always the same things"], correct: 0 },
 
+  { text: "das Gericht", options: ["dish / meal", "glass"], correct: 0 },
+  { text: "ein anderes Gericht", options: ["another meal", "a drink"], correct: 0 },
+  { text: "andere Gerichte", options: ["other dishes", "same dishes"], correct: 0 },
+  { text: "zweimal pro Woche", options: ["twice a week", "once a year"], correct: 0 },
+  { text: "Es wird gegessen, was auf den Tisch kommt.", options: ["You eat what is served.", "You can always choose."], correct: 0 },
 
-   const questions = [
+  { text: "die Beilage", options: ["side dish", "main dish"], correct: 0 },
+  { text: "Weißwurst mit Brezel", options: ["white sausage with pretzel", "fish with rice"], correct: 0 },
+  { text: "Fleischroulade mit Rotkohl", options: ["meat roulade with red cabbage", "bread with cheese"], correct: 0 },
+  { text: "Bratkartoffeln mit Sülze und Remoulade", options: ["fried potatoes with aspic and remoulade", "pasta with tomato sauce"], correct: 0 },
+  { text: "Es ist üblich, es mit Mais zu kochen.", options: ["It is common to cook it with corn.", "It is forbidden to cook it with corn."], correct: 0 },
+  { text: "Wir servieren das mit Salat und Gemüse.", options: ["We serve it with salad and vegetables.", "We serve it with only bread."], correct: 0 },
+  { text: "Radieschen", options: ["radish", "cucumber"], correct: 0 },
 
-  // 1. stellen – trennbar
-  { text: "Ich stelle den Stuhl ___.", options: ["auf", "ab"], correct: 0 },
-  { text: "Er stellt sich der Klasse ___.", options: ["um", "vor"], correct: 1 },
-  { text: "Sie stellt ihre Bilder ___.", options: ["aus", "ab"], correct: 0 },
-  { text: "Wir stellen neue Mitarbeiter ___.", options: ["ein", "an"], correct: 0 },
-  { text: "Bitte stelle die Möbel ___.", options: ["um", "ein"], correct: 0 },
+  { text: "während", options: ["during", "after"], correct: 0 },
+  { text: "bis", options: ["until", "since"], correct: 0 },
+  { text: "ab", options: ["from (a point in time)", "before"], correct: 0 },
+  { text: "Ab wann kann man Zigaretten rauchen in Kamerun?", options: ["From when can one smoke in Cameroon?", "Until when can one smoke in Cameroon?"], correct: 0 },
+  { text: "von", options: ["from", "until"], correct: 0 },
+  { text: "um", options: ["at (time)", "in (location)"], correct: 0 },
+  { text: "um 12 Uhr", options: ["at 12 o’clock", "until 12 o’clock"], correct: 0 },
+  { text: "Wann endet unser Kurs heute?", options: ["When does our course end today?", "When does our course start tomorrow?"], correct: 0 },
+  { text: "von wann bis wann?", options: ["from when to when?", "since when until when?"], correct: 0 },
+  { text: "vor (ago)", options: ["ago", "before (future)"], correct: 0 },
+  { text: "Ich habe vor fünf Jahren geheiratet.", options: ["I got married five years ago.", "I will get married in five years."], correct: 0 },
+  { text: "an + DATUM / TAG", options: ["on + date/day", "in + year"], correct: 0 },
+  { text: "am zweiten Februar", options: ["on February 2nd", "since February 2nd"], correct: 0 },
+  { text: "am 27. Januar", options: ["on January 27th", "since January 27th"], correct: 0 },
+  { text: "am Montag", options: ["on Monday", "in Monday"], correct: 0 },
+  { text: "seit + Zeitpunkt / Zeitraum", options: ["since + point in time / time span", "until + point in time"], correct: 0 },
+  { text: "Seit wann haben wir Unterricht?", options: ["Since when have we had class?", "Until when do we have class?"], correct: 0 },
+  { text: "Wir haben seit 11 Uhr Unterricht.", options: ["We have had class since 11 o’clock.", "We will have class at 11 o’clock."], correct: 0 },
+  { text: "Wir haben 36 Minuten Unterricht.", options: ["We have class for 36 minutes.", "We had class 36 days ago."], correct: 0 },
+  { text: "Wir haben seit dem ersten Mai Unterricht.", options: ["We have had class since May 1st.", "We had class until May 1st."], correct: 0 },
+  { text: "Wir haben seit drei Monaten Unterricht.", options: ["We have had class for three months.", "We had class three months ago."], correct: 0 },
+  { text: "Ich arbeite seit Dezember.", options: ["I have been working since December.", "I worked until December."], correct: 0 },
+  { text: "Bist du seit 6 Jahren verheiratet?", options: ["Have you been married for 6 years?", "Were you married 6 years ago?"], correct: 0 },
 
-  // 1. stellen – untrennbar
-  { text: "Ich ___stelle eine Pizza.", options: ["be", "er"], correct: 0 },
-  { text: "Wir ___stellen einen Plan.", options: ["ver", "er"], correct: 1 },
-  { text: "Er ___stellt mir eine Lüge.", options: ["unter", "ver"], correct: 0 },
-  { text: "Sie ___steckt das Geschenk.", options: ["ver", "be"], correct: 1 },
-  { text: "Die Möbel wurden ___gestellt.", options: ["her", "er"], correct: 1 },
+  { text: "schaffen", options: ["to manage / accomplish", "to sleep"], correct: 0 },
+  { text: "Schaffst du es, Paca zu kochen?", options: ["Do you manage to cook Paca?", "Do you want to eat Paca?"], correct: 0 },
+  { text: "sich an etwas gewöhnen", options: ["to get used to something", "to forbid something"], correct: 0 },
+  { text: "Hast du dich an das Essen in Deutschland gewöhnt?", options: ["Did you get used to the food in Germany?", "Did you avoid the food in Germany?"], correct: 0 },
+  { text: "das Wetter", options: ["weather", "sea"], correct: 0 },
+  { text: "die Arbeit bei DCSO", options: ["the work at DCSO", "the holiday at DCSO"], correct: 0 },
+  { text: "gelingen", options: ["to succeed", "to forbid"], correct: 0 },
+  { text: "Gelingt die Paca?", options: ["Does the Paca succeed / work out?", "Does the Paca fail?"], correct: 0 },
+  { text: "Nein, Paca gelingt mir nicht.", options: ["No, Paca does not work out for me.", "Yes, Paca is perfect."], correct: 0 },
+  { text: "Gelingt dir das Projekt?", options: ["Does the project succeed for you?", "Does the project fail for you?"], correct: 0 },
+  { text: "Gelingt es dir, jeden Tag Sport zu machen?", options: ["Do you succeed in doing sports every day?", "Do you avoid doing sports every day?"], correct: 0 },
+  { text: "Es gelingt mir, jeden Tag Sport zu machen.", options: ["I succeed in doing sports every day.", "I fail to do sports every day."], correct: 0 },
+  { text: "Gelingt es dir, jeden Tag genug zu schlafen?", options: ["Do you succeed in sleeping enough every day?", "Do you forbid yourself to sleep?"], correct: 0 },
+  { text: "Es gelingt mir nicht, Deutsch zu lernen.", options: ["I do not succeed in learning German.", "I always succeed in learning German."], correct: 0 },
 
-  // 2. kommen – trennbar
-  { text: "Kommst du ___?", options: ["an", "mit"], correct: 1 },
-  { text: "Er kommt morgen ___.", options: ["um", "ein"], correct: 0 },
-  { text: "Wann kommt der Zug ___?", options: ["an", "aus"], correct: 0 },
-  { text: "Sie kommt heute Abend ___.", options: ["ab", "mit"], correct: 1 },
-  { text: "Ein Gewitter kommt ___.", options: ["auf", "ab"], correct: 0 },
+  { text: "die Heimat", options: ["home / homeland", "holiday place"], correct: 0 },
+  { text: "die Stadt, aus der ich komme", options: ["the city where I come from", "the city where I will go"], correct: 0 },
+  { text: "das Land, aus dem ich komme", options: ["the country where I come from", "the country where I will go"], correct: 0 },
+  { text: "deine zweite Heimat", options: ["your second home", "your second office"], correct: 0 },
+  { text: "Fühlst du dich zu Hause hier?", options: ["Do you feel at home here?", "Do you feel sick here?"], correct: 0 },
+  { text: "Ich fühle mich als Ausländer(in).", options: ["I feel like a foreigner.", "I feel like a teacher."], correct: 0 },
 
+  { text: "Dativpronomen: mir, dir, ihm/ihr, uns, euch, ihnen", options: ["dative pronouns", "accusative pronouns"], correct: 0 },
+  { text: "Berlin gefällt mir.", options: ["I like Berlin.", "Berlin hates me."], correct: 0 },
+  { text: "das Handy gehört mir.", options: ["The mobile phone belongs to me.", "I belong to the mobile phone."], correct: 0 },
+  { text: "der Handstand gelingt mir.", options: ["The handstand works out for me.", "I cannot do a handstand."], correct: 0 },
 
-  // 2. kommen – untrennbar
-  { text: "Ich ___komme ein Geschenk.", options: ["be", "vor"], correct: 0 },
-  { text: "Der Dieb ___kam der Polizei.", options: ["ent", "er"], correct: 0 },
-  { text: "Die Wohnung ist völlig ___gekommen.", options: ["herunter", "auf"], correct: 0 },
-  { text: "Mich ___kam ein schlechtes Gefühl.", options: ["ver", "über"], correct: 1 },
-  { text: "So etwas kommt oft ___.", options: ["aus", "vor"], correct: 1 },
-
-
-  // 3. gehen – trennbar
-  { text: "Wir gehen heute Abend ___.", options: ["aus", "an"], correct: 0 },
-  { text: "Willst du ___ gehen nach Spanien?", options: ["auf", "mit"], correct: 1 },
-  { text: "Geh bitte ___!", options: ["weg", "an"], correct: 0 },
-  { text: "Er geht heute Abend ___.", options: ["aus", "ein"], correct: 0 },
-  { text: "Jetzt geht es ___!", options: ["los", "an"], correct: 0 },
-
-
-  // 3. gehen – untrennbar
-  { text: "Er ___geht einen Fehler.", options: ["be", "ver"], correct: 0 },
-  { text: "Ihm ___geht nichts.", options: ["ent", "be"], correct: 0 },
-  { text: "Die Zeit ___geht schnell.", options: ["ver", "ab"], correct: 0 },
-  { text: "Sie ___geht einen Fehler.", options: ["an", "be"], correct: 1 },
-  { text: "Ich will die Regel nicht ___gehen.", options: ["über", "auf"], correct: 0 },
-  
-  
-
-  // 4. nehmen – trennbar
-  { text: "Ich nehme 20kg ___.", options: ["ab", "auf"], correct: 0 },
-  { text: "Nimmst du dein Buch ___?", options: ["ein", "mit"], correct: 1 },
-  { text: "Er nimmt das Angebot ___.", options: ["an", "ab"], correct: 0 },
-  { text: "Sie nimmt ihre Aussage ___.", options: ["zurück", "ein"], correct: 0 },
-  { text: "Wir nehmen das Gespräch ___.", options: ["auf", "ab"], correct: 0 },
-
-  // 4. nehmen – untrennbar
-  { text: "Er ___nimmt sich schlecht.", options: ["be", "ent"], correct: 0 },
-  { text: "Die Polizei ___nimmt den Zeugen.", options: ["ver", "unter"], correct: 0 },
-  { text: "Wir ___nehmen etwas.", options: ["aus", "unter"], correct: 1 },
-  { text: "Sie ___nimmt das Projekt.", options: ["ab", "über"], correct: 1 },
-  { text: "Ich ___nehme die Daten dem Bericht.", options: ["über", "ent"], correct: 1 },
-
-  // 5. schreiben – trennbar
-  { text: "Schreib den Text bitte noch mal sauber ___.", options: ["ab", "ein"], correct: 0 },
-  { text: "Ich schreibe mir seine Nummer ___.", options: ["auf", "bei"], correct: 0 },
-  { text: "Er geht zur Tafel und schreibt die Lösung ___.", options: ["ein", "an"], correct: 1 },
-  { text: "Sie schreibt sich an der Uni ___.", options: ["ab", "ein"], correct: 1 },
-  { text: "Wir schreiben den Gedanken ___.", options: ["ein", "auf"], correct: 1 },
-
-  // 5. schreiben – untrennbar
-  { text: "Ich ___schreibe das Bild.", options: ["be", "ver"], correct: 0 },
-  { text: "Der Arzt ___schreibt Medikamente.", options: ["unter", "ver"], correct: 1 },
-  { text: "Sie ___schreibt die Datei.", options: ["über", "an"], correct: 0 },
-  { text: "Er ___schreibt den Vertrag.", options: ["an", "unter"], correct: 1 },
-  { text: "Ich ____schreibe mir Klahrheit.", options: ["er", "ver"], correct: 0 },
-// 6. arbeiten – trennbar
-{ text: "Wir arbeiten ___.", options: ["zusammen", "ab"], correct: 0 },
-{ text: "Sie arbeiten gut ___.", options: ["an", "mit"], correct: 1 },
-{ text: "Ich arbeite morgen ___.", options: ["vor", "auf"], correct: 0 },
-{ text: "Er arbeitet die Aufgaben ___.", options: ["ab", "aus"], correct: 1 },
-{ text: "Sie arbeiten den Plan ___.", options: ["aus", "vor"], correct: 0 },
-
-// 6. arbeiten – untrennbar
-{ text: "Ich ___arbeite die Anfrage.", options: ["er", "be"], correct: 0 },
-{ text: "Sie ___arbeitet die Daten.", options: ["ver", "be"], correct: 0 },
-{ text: "Er ___arbeitet den Text.", options: ["ab", "über"], correct: 1 },
-{ text: "Sie ___arbeitet die Aufgaben.", options: ["be", "über"], correct: 1 },
-{ text: "Wir ___arbeiten das Konzept.", options: ["er", "be"], correct: 0 },
-
-// 7. spielen – trennbar
-{ text: "Komm, spiel ___!", options: ["mit", "ab"], correct: 0 },
-{ text: "Er spielt das Lied ___.", options: ["an", "vor"], correct: 1 },
-{ text: "Wir spielen das Scenario ___.", options: ["durch", "ab"], correct: 0 },
-{ text: "Sie spielt das Video ___.", options: ["ab", "auf"], correct: 0 },
-{ text: "Ich spiele noch ein bisschen ___.", options: ["ein", "mit"], correct: 1 },
-
-// 7. spielen – untrennbar
-{ text: "Er ___spielt sein Geld.", options: ["ver", "be"], correct: 0 },
-{ text: "Sie ___spielen die Bühne.", options: ["ver", "be"], correct: 1 },
-{ text: "Ich ___spiele den Film.", options: ["über", "ver"], correct: 0 },
-{ text: "Sie ___spielt den Gegner.", options: ["be", "um"], correct: 0 },
-{ text: "Er ___spielt seinen Ruf.", options: ["um", "ver"], correct: 1 },
-
-// 8. tragen – trennbar
-{ text: "Er füllt die Suppe ___.", options: ["ein", "aus"], correct: 0 },
-{ text: "Sie trägt sich in die Liste ___.", options: ["aus", "ein"], correct: 1 },
-{ text: "Ich trage die Zeitungen ___.", options: ["aus", "ab"], correct: 0 },
-{ text: "Er trägt sein Anliegen an mich her___.", options: ["ab", "an"], correct: 1 },
-{ text: "Sie trägt die Daten ___.", options: ["ein", "an"], correct: 0 },
-
-// 8. tragen – untrennbar
-{ text: "Ich ___trage den Lärm nicht.", options: ["ver", "er"], correct: 0 },
-{ text: "Wir ___tragen uns wieder.", options: ["ver", "über"], correct: 0 },
-{ text: "Sie ___trägt das Spiel live.", options: ["über", "ab"], correct: 0 },
-{ text: "Der Preis ___trägt zehn Euro.", options: ["ab", "be"], correct: 1 },
-{ text: "Er ___zieht die Steuern.", options: ["hinter", "ver"], correct: 0 },
-
-// 9. setzen – trennbar
-{ text: "Ich setze die Brille ___.", options: ["auf", "ab"], correct: 0 },
-{ text: "Wir setzen einen Termin ___.", options: ["ein", "an"], correct: 1 },
-{ text: "Sie setzt die Idee ___.", options: ["um", "ab"], correct: 0 },
-{ text: "Er setzt sich ___.", options: ["auf", "hin"], correct: 1 },
-{ text: "Wir setzen das Kind ___.", options: ["ab", "hin"], correct: 0 },
-
-// 9. setzen – untrennbar
-{ text: "Sie ___setzt den Platz.", options: ["be", "ab"], correct: 0 },
-{ text: "Er ___setzt den Kollegen.", options: ["ab", "ver"], correct: 1 },
-{ text: "Ich ___setze den Text.", options: ["an", "über"], correct: 0 },
-{ text: "Wir setzen den Plan ___.", options: ["ab", "um"], correct: 1 },
-{ text: "Sie ___setzen das Haus.", options: ["be", "ab"], correct: 0 },
-
-// 10. ziehen – trennbar
-{ text: "Ich ziehe meine Jacke ___.", options: ["aus", "ab"], correct: 0 },
-{ text: "Sie zieht das Hemd ___.", options: ["aus", "um"], correct: 0 },
-{ text: "Wir ziehen nächste Woche ___.", options: ["ab", "um"], correct: 1 },
-{ text: "Er zieht nach Berlin ___.", options: ["um", "ab"], correct: 0 },
-{ text: "Das Kind zieht den Wagen ___.", options: ["weg", "hinterher"], correct: 1 },
-
-// 10. ziehen – untrennbar
-{ text: "Wir ___ziehen die Wohnung.", options: ["be", "ver"], correct: 0 },
-{ text: "Das Kind ___zieht das Gesicht.", options: ["ver", "über"], correct: 0 },
-{ text: "Er zieht das Projekt ___.", options: ["über", "durch"], correct: 1 },
-{ text: "Sie ___zieht das Konto.", options: ["über", "ab"], correct: 0 },
-{ text: "Die Eltern ___ziehen das Kind.", options: ["er", "ab"], correct: 0 }
-  
-    ];
-
-
-
+  { text: "Ich gewöhne mich an das Wetter.", options: ["I get used to the weather.", "I avoid the weather."], correct: 0 },
+  { text: "Du gewöhnst dich an das Wetter.", options: ["You get used to the weather.", "You avoid the weather."], correct: 0 },
+  { text: "Er gewöhnt sich an das Wetter.", options: ["He gets used to the weather.", "He avoids the weather."], correct: 0 },
+  { text: "Wir gewöhnen uns an das Wetter.", options: ["We get used to the weather.", "We forbid the weather."], correct: 0 },
+  { text: "Ihr gewöhnt euch an das Wetter.", options: ["You (pl) get used to the weather.", "You (pl) avoid the weather."], correct: 0 },
+  { text: "Sie gewöhnen sich an das Wetter.", options: ["They get used to the weather.", "They avoid the weather."], correct: 0 },
+  { text: "Ich habe mich an das Wetter gewöhnt.", options: ["I got used to the weather.", "I avoided the weather."], correct: 0 },
+  { text: "Du hast dich an das Wetter gewöhnt.", options: ["You got used to the weather.", "You avoided the weather."], correct: 0 },
+  { text: "Er hat sich an das Wetter gewöhnt.", options: ["He got used to the weather.", "He avoided the weather."], correct: 0 },
+  { text: "Wir haben uns an das Wetter gewöhnt.", options: ["We got used to the weather.", "We avoided the weather."], correct: 0 },
+  { text: "Ihr habt euch an das Wetter gewöhnt.", options: ["You (pl) got used to the weather.", "You (pl) avoided the weather."], correct: 0 },
+  { text: "Sie haben sich an das Wetter gewöhnt.", options: ["They got used to the weather.", "They avoided the weather."], correct: 0 }
+];
     let currentQuestion = 0;
     let score = 0;
     let incorrectAnswers = [];
