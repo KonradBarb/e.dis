@@ -206,55 +206,250 @@
     </div>
   </div>
 <script>
-const questions = [
-  { "text": "Was bedeutet 'meistens'?", "options": ["mostly", "most people"], "correct": 0 },
-  { "text": "Was bedeutet 'am meisten'?", "options": ["the mostly", "the most"], "correct": 1 },
-  { "text": "Übersetze: die meisten Leute", "options": ["more people", "most people"], "correct": 1 },
 
-  { "text": "Übersetze: aufmachen", "options": ["to close", "to open"], "correct": 1 },
-  { "text": "Übersetze: zumachen", "options": ["to open", "to shut/close"], "correct": 1 },
-  { "text": "Übersetze: anklappen", "options": ["to clap loudly", "to fold/tilt"], "correct": 1 },
-  { "text": "Ich habe das Fenster angeklappt.", "options": ["I tilted/folded the window.", "I broke the window."], "correct": 0 },
-  { "text": "Das Fenster ist angeklappt.", "options": ["The window is broken.", "The window is tilted."], "correct": 1 },
 
-  { "text": "Übersetze: aufwachsen", "options": ["to wake up", "to grow up"], "correct": 1 },
-  { "text": "Ich bin aufgewachsen.", "options": ["I grew up.", "I got up."], "correct": 0 },
-  { "text": "Bist du auf dem Land aufgewachsen?", "options": ["Did you live in the city center?", "Did you grow up in the countryside?"], "correct": 1 },
-  { "text": "Übersetze: die Stadt", "options": ["the city", "the state"], "correct": 0 },
-  { "text": "Übersetze: das Land", "options": ["the countryside", "the country government"], "correct": 0 },
 
-  { "text": "Übersetze: sich kennen", "options": ["to meet each other", "to know each other"], "correct": 1 },
-  { "text": "Jeder kennt jeden.", "options": ["Everybody meets everybody.", "Everybody knows everybody."], "correct": 1 },
-  { "text": "Übersetze: sich ausruhen", "options": ["to rest", "to rush"], "correct": 0 },
-  { "text": "Ich ruhe mich vor dem Fernseher aus.", "options": ["I relax in front of the TV.", "I rush in front of the TV."], "correct": 0 },
 
-  { "text": "Übersetze: die Gemeinschaft", "options": ["the community", "the company"], "correct": 0 },
-  { "text": "Übersetze: die Dorfgemeinschaft", "options": ["the village church", "the village community"], "correct": 1 },
-  { "text": "Übersetze: das Zusammenleben", "options": ["to live again", "living together"], "correct": 1 },
-  { "text": "Die Kinder können überfahren werden.", "options": ["The children can be run over.", "The children can be taken over."], "correct": 0 },
 
-  { "text": "Übersetze: aufgeben", "options": ["to give up", "to pick up"], "correct": 0 },
-  { "text": "Übersetze: verzichten auf", "options": ["to agree with", "to do without"], "correct": 1 },
-  { "text": "abwechslungsreich", "options": ["boring", "varied"], "correct": 1 },
 
-  { "text": "Übersetze: innerhalb der Stadt", "options": ["outside the city", "inside the city"], "correct": 1 },
-  { "text": "Übersetze: außerhalb der Stadt", "options": ["outside the city", "inside the city"], "correct": 0 },
 
-  { "text": "Übersetze: gern", "options": ["gladly", "badly"], "correct": 0 },
-  { "text": "Übersetze: lieber als", "options": ["preferably / rather than", "more lovely"], "correct": 0 },
-  { "text": "Übersetze: am liebsten", "options": ["loveliest", "most preferably"], "correct": 1 },
 
-  { "text": "Womit?", "options": ["With what?", "On what?"], "correct": 0 },
-  { "text": "Worauf?", "options": ["With what?", "On what?"], "correct": 1 },
-  { "text": "Übersetze: damit", "options": ["on it", "with it"], "correct": 1 },
-  { "text": "Übersetze: darauf", "options": ["with it", "on it"], "correct": 1 },
 
-  { "text": "Übersetze: frische Luft", "options": ["fresh air", "cold water"], "correct": 0 },
-  { "text": "Übersetze: kein Stau", "options": ["no traffic jam", "no noise"], "correct": 0 },
-  { "text": "Übersetze: weniger Privatsphäre", "options": ["less money", "less privacy"], "correct": 1 },
-  { "text": "Es gibt viele mögliche Aktivitäten.", "options": ["There are many possible activities.", "There are many impossible activities."], "correct": 0 },
-  { "text": "Ich möchte nicht auf Kino verzichten.", "options": ["I don’t want to watch cinema.", "I don’t want to do without cinema."], "correct": 1 }
-];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const questions =[
+  { "text": "Wir klettern heute an der ___.", 
+    "options": ["Kletterwand", "Gasherd"], 
+    "correct": 0 },
+
+  { "text": "Gestern bin ich zum ersten Mal ___ .", 
+    "options": ["geklettert", "gekocht"], 
+    "correct": 0 },
+
+  { "text": "Um zum Kino zu kommen, musst du links ___ .", 
+    "options": ["abbiegen", "aufstehen"], 
+    "correct": 0 },
+
+  { "text": "Ich brauche 30 Minuten, wenn ich zu Fuß zur Arbeit ___ .", 
+    "options": ["gehe", "esse"], 
+    "correct": 0 },
+
+  { "text": "Das Büro ist nur 30 Minuten von meinem ___ entfernt.", 
+    "options": ["Zuhause", "Auto"], 
+    "correct": 0 },
+
+  { "text": "Die ___ sind im Herbst sehr aktiv.", 
+    "options": ["Eichhörnchen", "Herde"], 
+    "correct": 0 },
+
+  { "text": "Der Mietvertrag ist nur für drei Monate gültig. Er ist ___.", 
+    "options": ["befristet", "unbefristet"], 
+    "correct": 0 },
+
+  { "text": "Ich habe den Vertrag vor eineinhalb Monaten ___.", 
+    "options": ["unterschrieben", "abgegeben"], 
+    "correct": 0 },
+
+  { "text": "Ob ich nach Spanien gehe, hängt ___ meiner Arbeit ab.", 
+    "options": ["von", "zu"], 
+    "correct": 0 },
+
+  { "text": "Ich habe im August 2020 meine Prüfung ___ .", 
+    "options": ["bestanden", "vergessen"], 
+    "correct": 0 },
+
+  { "text": "Man ist in Deutschland ___, wenn man 18 ist.", 
+    "options": ["volljährig", "minderjährig"], 
+    "correct": 0 },
+
+  { "text": "Kann man nur für 90 Tage lang hier ___ ?", 
+    "options": ["bleiben", "laufen"], 
+    "correct": 0 },
+
+  { "text": "Der ___ im Park ist sehr alt.", 
+    "options": ["Baum", "Gasherd"], 
+    "correct": 0 },
+
+  { "text": "Dieses Brot ist etwas Anderes ___ ein Kuchen.", 
+    "options": ["als", "wie"], 
+    "correct": 0 },
+
+  { "text": "Ich nenne dich meinen besten ___.", 
+    "options": ["Freund", "Baum"], 
+    "correct": 0 },
+
+  { "text": "Hast du den Vertrag schon ___ ?", 
+    "options": ["abgeschlossen", "angefangen"], 
+    "correct": 0 },
+
+  { "text": "Bist du schon mit allen Levels ___ ?", 
+    "options": ["fertig", "beginnt"], 
+    "correct": 0 },
+
+  { "text": "Ich leide ___ Migräne.", 
+    "options": ["an", "unter"], 
+    "correct": 0 },
+
+  { "text": "Ich leide ___ dem Druck im Büro.", 
+    "options": ["unter", "an"], 
+    "correct": 0 },
+
+  { "text": "Ich war ___ zwei Wochen im Urlaub.", 
+    "options": ["vor", "für"], 
+    "correct": 0 },
+
+  { "text": "Ich war ___ fünf Tage im Urlaub.", 
+    "options": ["für", "vor"], 
+    "correct": 0 },
+
+  { "text": "Ich träume ___ Geld.", 
+    "options": ["von", "mit"], 
+    "correct": 0 },
+
+  { "text": "Ich träume ___, dass ich Geld habe.", 
+    "options": ["davon", "daran"], 
+    "correct": 0 },
+
+  { "text": "Ich habe Angst ___ Spinnen.", 
+    "options": ["vor", "zu"], 
+    "correct": 0 },
+
+  { "text": "Gestern gab es einen ___ auf den Flughafen.", 
+    "options": ["Cyber-Angriff", "Kaffee"], 
+    "correct": 0 },
+
+  { "text": "Dieser Angriff ___ ganz Europa.", 
+    "options": ["betrifft", "schreibt"], 
+    "correct": 0 },
+
+  { "text": "Der Flughafen in London war auch ___ von dem Angriff.", 
+    "options": ["betroffen", "gespielt"], 
+    "correct": 0 },
+
+  { "text": "Das hängt ___ der Firma ab.", 
+    "options": ["von", "zu"], 
+    "correct": 0 },
+
+  { "text": "Das ist ___ der Firma abhängig.", 
+    "options": ["von", "auf"], 
+    "correct": 0 },
+
+  { "text": "Der ___ forscht zu Cybersicherheit.", 
+    "options": ["Forscher", "Angriff"], 
+    "correct": 0 },
+
+  { "text": "Die Forscherin arbeitet an ihrem ___.", 
+    "options": ["Referat", "Flughafen"], 
+    "correct": 0 },
+
+  { "text": "Berätst du Firmen präventiv in Bezug auf ___ ?", 
+    "options": ["Risiken", "Kaffee"], 
+    "correct": 0 },
+
+  { "text": "Ich suche nach einer ___ .", 
+    "options": ["Lösung", "Baum"], 
+    "correct": 0 },
+
+  { "text": "Ich ___, die Klimaanlage anzumachen.", 
+    "options": ["versuche", "schreibe"], 
+    "correct": 0 },
+
+  { "text": "Der Film hat nichts ___ mir zu tun.", 
+    "options": ["mit", "von"], 
+    "correct": 0 },
+
+  { "text": "Hat der Angriff etwas ___ euch zu tun?", 
+    "options": ["mit", "an"], 
+    "correct": 0 },
+
+  { "text": "Ich ___ dich, mir Geld zu geben.", 
+    "options": ["bitte", "schreibe"], 
+    "correct": 0 },
+
+  { "text": "Ich bitte dich ___ Geld.", 
+    "options": ["um", "auf"], 
+    "correct": 0 },
+
+  { "text": "Bitten dich deine Kunden, dass du die Herkunft ___ ?", 
+    "options": ["herausfindest", "liest"], 
+    "correct": 0 },
+
+  { "text": "Ein Mann, ___ Kaffee trinkt.", 
+    "options": ["der", "den"], 
+    "correct": 0 },
+
+  { "text": "Der Mann, ___ ich Kaffee gebe.", 
+    "options": ["dem", "den"], 
+    "correct": 0 },
+
+  { "text": "Der Mann, ___ ich sehe.", 
+    "options": ["den", "der"], 
+    "correct": 0 },
+
+  { "text": "Der Mann, ___ Kaffee heiß ist.", 
+    "options": ["dessen", "deren"], 
+    "correct": 0 },
+
+  { "text": "Die Frau, ___ ich sehe.", 
+    "options": ["die", "der"], 
+    "correct": 0 },
+
+  { "text": "Die Frau, ___ Kaffee heiß ist.", 
+    "options": ["deren", "dessen"], 
+    "correct": 0 },
+
+  { "text": "Das Kind, ___ ich Kaffee gebe.", 
+    "options": ["dem", "den"], 
+    "correct": 0 },
+
+  { "text": "Die Menschen, ___ ich Kaffee gebe.", 
+    "options": ["denen", "deren"], 
+    "correct": 0 },
+
+  { "text": "Die Menschen, ___ Kaffee heiß ist.", 
+    "options": ["deren", "denen"], 
+    "correct": 0 }
+]
+
+
+
+
+;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     let currentQuestion = 0;
     let score = 0;
     let incorrectAnswers = [];
