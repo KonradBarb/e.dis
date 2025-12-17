@@ -181,7 +181,7 @@
 </head>
 <body>
   <div class="start-screen">
-    <img src="logoo.png" alt="Logo" class="logo">
+    <img src="logo.png" alt="Logo" class="logo">
     <h1>Swipe left or right!</h1>
     <button class="start-button" onclick="startQuiz()">Los geht’s!</button>
   </div>
@@ -223,211 +223,86 @@
 
 
 
+const questions =
 
 
-
-
-
-
-
-
-
-const questions =[
-  { "text": "Wir klettern heute an der ___.", 
-    "options": ["Kletterwand", "Gasherd"], 
-    "correct": 0 },
-
-  { "text": "Gestern bin ich zum ersten Mal ___ .", 
-    "options": ["geklettert", "gekocht"], 
-    "correct": 0 },
-
-  { "text": "Um zum Kino zu kommen, musst du links ___ .", 
-    "options": ["abbiegen", "aufstehen"], 
-    "correct": 0 },
-
-  { "text": "Ich brauche 30 Minuten, wenn ich zu Fuß zur Arbeit ___ .", 
-    "options": ["gehe", "esse"], 
-    "correct": 0 },
-
-  { "text": "Das Büro ist nur 30 Minuten von meinem ___ entfernt.", 
-    "options": ["Zuhause", "Auto"], 
-    "correct": 0 },
-
-  { "text": "Die ___ sind im Herbst sehr aktiv.", 
-    "options": ["Eichhörnchen", "Herde"], 
-    "correct": 0 },
-
-  { "text": "Der Mietvertrag ist nur für drei Monate gültig. Er ist ___.", 
-    "options": ["befristet", "unbefristet"], 
-    "correct": 0 },
-
-  { "text": "Ich habe den Vertrag vor eineinhalb Monaten ___.", 
-    "options": ["unterschrieben", "abgegeben"], 
-    "correct": 0 },
-
-  { "text": "Ob ich nach Spanien gehe, hängt ___ meiner Arbeit ab.", 
-    "options": ["von", "zu"], 
-    "correct": 0 },
-
-  { "text": "Ich habe im August 2020 meine Prüfung ___ .", 
-    "options": ["bestanden", "vergessen"], 
-    "correct": 0 },
-
-  { "text": "Man ist in Deutschland ___, wenn man 18 ist.", 
-    "options": ["volljährig", "minderjährig"], 
-    "correct": 0 },
-
-  { "text": "Kann man nur für 90 Tage lang hier ___ ?", 
-    "options": ["bleiben", "laufen"], 
-    "correct": 0 },
-
-  { "text": "Der ___ im Park ist sehr alt.", 
-    "options": ["Baum", "Gasherd"], 
-    "correct": 0 },
-
-  { "text": "Dieses Brot ist etwas Anderes ___ ein Kuchen.", 
-    "options": ["als", "wie"], 
-    "correct": 0 },
-
-  { "text": "Ich nenne dich meinen besten ___.", 
-    "options": ["Freund", "Baum"], 
-    "correct": 0 },
-
-  { "text": "Hast du den Vertrag schon ___ ?", 
-    "options": ["abgeschlossen", "angefangen"], 
-    "correct": 0 },
-
-  { "text": "Bist du schon mit allen Levels ___ ?", 
-    "options": ["fertig", "beginnt"], 
-    "correct": 0 },
-
-  { "text": "Ich leide ___ Migräne.", 
-    "options": ["an", "unter"], 
-    "correct": 0 },
-
-  { "text": "Ich leide ___ dem Druck im Büro.", 
-    "options": ["unter", "an"], 
-    "correct": 0 },
-
-  { "text": "Ich war ___ zwei Wochen im Urlaub.", 
-    "options": ["vor", "für"], 
-    "correct": 0 },
-
-  { "text": "Ich war ___ fünf Tage im Urlaub.", 
-    "options": ["für", "vor"], 
-    "correct": 0 },
-
-  { "text": "Ich träume ___ Geld.", 
-    "options": ["von", "mit"], 
-    "correct": 0 },
-
-  { "text": "Ich träume ___, dass ich Geld habe.", 
-    "options": ["davon", "daran"], 
-    "correct": 0 },
-
-  { "text": "Ich habe Angst ___ Spinnen.", 
-    "options": ["vor", "zu"], 
-    "correct": 0 },
-
-  { "text": "Gestern gab es einen ___ auf den Flughafen.", 
-    "options": ["Cyber-Angriff", "Kaffee"], 
-    "correct": 0 },
-
-  { "text": "Dieser Angriff ___ ganz Europa.", 
-    "options": ["betrifft", "schreibt"], 
-    "correct": 0 },
-
-  { "text": "Der Flughafen in London war auch ___ von dem Angriff.", 
-    "options": ["betroffen", "gespielt"], 
-    "correct": 0 },
-
-  { "text": "Das hängt ___ der Firma ab.", 
-    "options": ["von", "zu"], 
-    "correct": 0 },
-
-  { "text": "Das ist ___ der Firma abhängig.", 
-    "options": ["von", "auf"], 
-    "correct": 0 },
-
-  { "text": "Der ___ forscht zu Cybersicherheit.", 
-    "options": ["Forscher", "Angriff"], 
-    "correct": 0 },
-
-  { "text": "Die Forscherin arbeitet an ihrem ___.", 
-    "options": ["Referat", "Flughafen"], 
-    "correct": 0 },
-
-  { "text": "Berätst du Firmen präventiv in Bezug auf ___ ?", 
-    "options": ["Risiken", "Kaffee"], 
-    "correct": 0 },
-
-  { "text": "Ich suche nach einer ___ .", 
-    "options": ["Lösung", "Baum"], 
-    "correct": 0 },
-
-  { "text": "Ich ___, die Klimaanlage anzumachen.", 
-    "options": ["versuche", "schreibe"], 
-    "correct": 0 },
-
-  { "text": "Der Film hat nichts ___ mir zu tun.", 
-    "options": ["mit", "von"], 
-    "correct": 0 },
-
-  { "text": "Hat der Angriff etwas ___ euch zu tun?", 
-    "options": ["mit", "an"], 
-    "correct": 0 },
-
-  { "text": "Ich ___ dich, mir Geld zu geben.", 
-    "options": ["bitte", "schreibe"], 
-    "correct": 0 },
-
-  { "text": "Ich bitte dich ___ Geld.", 
-    "options": ["um", "auf"], 
-    "correct": 0 },
-
-  { "text": "Bitten dich deine Kunden, dass du die Herkunft ___ ?", 
-    "options": ["herausfindest", "liest"], 
-    "correct": 0 },
-
-  { "text": "Ein Mann, ___ Kaffee trinkt.", 
-    "options": ["der", "den"], 
-    "correct": 0 },
-
-  { "text": "Der Mann, ___ ich Kaffee gebe.", 
-    "options": ["dem", "den"], 
-    "correct": 0 },
-
-  { "text": "Der Mann, ___ ich sehe.", 
-    "options": ["den", "der"], 
-    "correct": 0 },
-
-  { "text": "Der Mann, ___ Kaffee heiß ist.", 
-    "options": ["dessen", "deren"], 
-    "correct": 0 },
-
-  { "text": "Die Frau, ___ ich sehe.", 
-    "options": ["die", "der"], 
-    "correct": 0 },
-
-  { "text": "Die Frau, ___ Kaffee heiß ist.", 
-    "options": ["deren", "dessen"], 
-    "correct": 0 },
-
-  { "text": "Das Kind, ___ ich Kaffee gebe.", 
-    "options": ["dem", "den"], 
-    "correct": 0 },
-
-  { "text": "Die Menschen, ___ ich Kaffee gebe.", 
-    "options": ["denen", "deren"], 
-    "correct": 0 },
-
-  { "text": "Die Menschen, ___ Kaffee heiß ist.", 
-    "options": ["deren", "denen"], 
-    "correct": 0 }
+[
+  {
+    "text": "Ich ___ fotografiert.",
+    "options": ["bin", "werde", "habe", "wurde"],
+    "correct": 1
+  },
+  {
+    "text": "Das Lied ___ von Madonna gesungen.",
+    "options": ["ist", "wird", "hat", "war"],
+    "correct": 1
+  },
+  {
+    "text": "Zwecks ___ gehe ich ins Gym.",
+    "options": ["fit", "Fitness", "sportlich", "fit zu sein"],
+    "correct": 1
+  },
+  {
+    "text": "Ich gehe ins Gym, um ___ zu sein.",
+    "options": ["Glück", "glücklich sein", "glückliche", "glücklich"],
+    "correct": 3
+  },
+  {
+    "text": "Ich bin wütend ___ dich.",
+    "options": ["gegen", "auf", "mit", "für"],
+    "correct": 1
+  },
+  {
+    "text": "Ich habe ___ Hunger ___ Durst.",
+    "options": ["sowohl / als auch", "entweder / oder", "weder / noch", "zwar / aber"],
+    "correct": 2
+  },
+  {
+    "text": "Ich mag ___ Kaffee ___ Tee.",
+    "options": ["weder / noch", "sowohl / als auch", "zwar / aber", "entweder / aber"],
+    "correct": 1
+  },
+  {
+    "text": "Heute Abend gehe ich ___ ins Kino ___ in die Schwimmhalle.",
+    "options": ["sowohl / als auch", "zwar / aber", "entweder / oder", "weder / noch"],
+    "correct": 2
+  },
+  {
+    "text": "Ich habe ___ schon Alkohol getrunken, ___ nie Heroin konsumiert.",
+    "options": ["weder / noch", "zwar / aber", "sowohl / als auch", "entweder / oder"],
+    "correct": 1
+  },
+  {
+    "text": "Ich bin sehr ___, die Prüfung ist vorbei.",
+    "options": ["verwirrend", "wütend", "erleichtert", "einsam"],
+    "correct": 2
+  },
+  {
+    "text": "Er lebt ___, aber er ist nicht ___.",
+    "options": ["einsam / allein", "allein / einsam", "allein / allein", "einsam / einsam"],
+    "correct": 1
+  },
+  {
+    "text": "Ich ___ meine Entscheidung.",
+    "options": ["hoffe", "zweifle", "bereue", "beende"],
+    "correct": 2
+  },
+  {
+    "text": "Darf ich dich ___ ein Brot bitten?",
+    "options": ["für", "mit", "um", "auf"],
+    "correct": 2
+  },
+  {
+    "text": "___ ich ein Brot bekommen?",
+    "options": ["Darf", "Dürfte", "Muss", "Kann"],
+    "correct": 1
+  },
+  {
+    "text": "Das ist jetzt ___ mir.",
+    "options": ["vor", "über", "zwischen", "hinter"],
+    "correct": 3
+  }
 ]
-
-
-
 
 ;
 
@@ -455,12 +330,31 @@ const questions =[
     let incorrectAnswers = [];
     let userAnswers = [];
 
-    function startQuiz() {
-      document.querySelector('.start-screen').style.display = 'none';
-      document.querySelector('.question-screen').style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // ✨ Scrollen verhindern
-      showQuestion();
-    }
+function notifyTeacherTestStarted() {
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjZflcxCygbQDkWQHEv1ZpDbTPLzwZV0wA3d21WlAFwpgHyeHWWWZBw5cVUsO1b9HScg/exec";
+  const SECRET = "SxhuleeerQuiz_2025_x98d76_22_MEINSECRET";
+
+  const params = new URLSearchParams({
+    secret: SECRET,
+    studentName: "Olena",
+    eventType: "start",
+    quizTitle: document.title,
+    pageUrl: window.location.href
+  });
+
+  const img = new Image();
+  img.src = WEB_APP_URL + "?" + params.toString();
+}
+
+function startQuiz() {
+  notifyTeacherTestStarted(); // ✅ Mail-Trigger
+
+  document.querySelector('.start-screen').style.display = 'none';
+  document.querySelector('.question-screen').style.display = 'flex';
+  document.body.style.overflow = 'hidden'; // ✨ Scrollen verhindern
+  showQuestion();
+}
+
 
     function showQuestion() {
       const container = document.getElementById('question-container');
