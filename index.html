@@ -18,6 +18,12 @@
       touch-action: pan-x;
     }
 
+.scroll-spacer {
+  height: 300px;   /* wenn du willst: 200–400px */
+  width: 100%;
+}
+
+
     img.logo {
       width: 120px;
       margin-top: 20px;
@@ -25,7 +31,7 @@
 
     .start-screen, .question-screen, .result-screen {
       display: none;
-      height: 100vh;
+      height: 100vh; 
       justify-content: center;
       align-items: center;
       flex-direction: column;
@@ -124,15 +130,41 @@
       background-color: #777;
     }
 
-    .result-screen {
-      display: none;
-      height: 100vh;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 20px;
-      overflow-y: auto; /* ✨ Scrollen nur auf Auswertungsseite erlauben */
-    }
+.result-screen {
+  display: none;
+  position: fixed;
+  inset: 0;                    /* ganzer Bildschirm */
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  padding-bottom: 140px;
+}
+
+/* 👇 NUR für die Resultatsseite */
+.result-screen.is-visible {
+  display: flex;
+ height: 100vh; 
+  overflow-y: auto;            /* echte Scroll-Fläche */
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;         /* vertikal scrollen erlauben */
+ overscroll-behavior: contain;
+}
+
+.result-image-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 40px auto 60px auto;
+}
+
+.result-image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+}
+
+
 
     .result-screen h2 {
       font-size: 1.5em;
@@ -177,6 +209,7 @@
       text-decoration: none;
       font-size: 1.5em;
     }
+
   </style>
 </head>
 <body>
@@ -204,8 +237,28 @@
       <a href="https://www.jazzupyourgerman.com" target="_blank">🌐</a>
       <a href="https://www.instagram.com/jazzupyourgerman/" target="_blank">📸</a>
     </div>
+<div class="result-image-container">
+  <img src="resultbild.jpg" alt="Ergebnisbild">
+</div>
+
+<div class="scroll-spacer"></div>
+
   </div>
 <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const questions =
 [
   {
@@ -335,35 +388,79 @@ const questions =
   }
 ]
 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     let currentQuestion = 0;
     let score = 0;
     let incorrectAnswers = [];
     let userAnswers = [];
 
+
+
+let mailPingImg = null;
+let startEventId = null;
+let startNotified = false;
+
 function notifyTeacherTestStarted() {
-  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwjZflcxCygbQDkWQHEv1ZpDbTPLzwZV0wA3d21WlAFwpgHyeHWWWZBw5cVUsO1b9HScg/exec";
+  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyLqhiCn9pVFlInvh3wpgDbM77Y15511_NHQVvm71OjoieU2Vs7JL8BBEjcJT2h3GJ7Og/exec";
   const SECRET = "SxhuleeerQuiz_2025_x98d76_22_MEINSECRET";
+
+  // ✅ pro Start genau eine Event-ID
+  if (!startEventId) {
+    startEventId =
+      (window.crypto && window.crypto.randomUUID)
+        ? window.crypto.randomUUID()
+        : Date.now() + "_" + Math.random();
+  }
 
   const params = new URLSearchParams({
     secret: SECRET,
-    studentName: "Olena",
+    studentName: „Olena“,
     eventType: "start",
     quizTitle: document.title,
-    pageUrl: window.location.href
+    pageUrl: window.location.href,
+    eventId: startEventId,
+    cb: Date.now() // ✅ Cache-Buster (wichtig für iOS)
   });
 
-  const img = new Image();
-  img.src = WEB_APP_URL + "?" + params.toString();
+  const url = WEB_APP_URL + "?" + params.toString();
+
+  // ✅ EINZIGER & ZUVERLÄSSIGER WEG FÜR iPHONE
+  mailPingImg = new Image();
+  mailPingImg.src = url;
 }
+
+
 
 function startQuiz() {
-  notifyTeacherTestStarted(); // ✅ Mail-Trigger
+  if (!startNotified) {
+    startNotified = true;
+    notifyTeacherTestStarted();
+  }
 
-  document.querySelector('.start-screen').style.display = 'none';
-  document.querySelector('.question-screen').style.display = 'flex';
-  document.body.style.overflow = 'hidden'; // ✨ Scrollen verhindern
-  showQuestion();
+  // iOS: Request kurz “atmen lassen”, bevor wir den Screen hart umschalten
+  setTimeout(() => {
+    document.querySelector('.start-screen').style.display = 'none';
+    document.querySelector('.question-screen').style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    showQuestion();
+  }, 200);
 }
+
+
 
 
     function showQuestion() {
@@ -417,15 +514,18 @@ function startQuiz() {
       }
     }
 
-    function nextQuestion() {
-      if (currentQuestion < questions.length - 1) {
-        currentQuestion++;
-        showQuestion();
-      } else if (currentQuestion === questions.length - 1) {
-        currentQuestion++;
-        showResult();
-      }
-    }
+function nextQuestion() {
+  // Noch nicht bei der letzten Frage
+  if (currentQuestion < questions.length - 1) {
+    currentQuestion++;
+    showQuestion();
+    return;
+  }
+
+  // Letzte Frage → Ergebnis anzeigen
+  showResult();
+}
+
 
     function prevQuestion() {
       if (currentQuestion > 0) {
@@ -434,37 +534,59 @@ function startQuiz() {
       }
     }
 
-    function showResult() {
-      document.querySelector('.question-screen').style.display = 'none';
-      const resultScreen = document.querySelector('.result-screen');
-      resultScreen.style.display = 'flex';
-      document.body.style.overflow = 'auto'; // ✨ Scrollen auf Auswertungsseite erlauben
+function showResult() {
+  document.querySelector('.start-screen').style.display = 'none';
+  document.querySelector('.question-screen').style.display = 'none';
 
-      const scoreText = document.getElementById('score-text');
-      scoreText.textContent = `Du hast ${score} von ${questions.length} richtig.`;
+const resultScreen = document.querySelector('.result-screen');
+resultScreen.style.display = 'flex';      // ✅ NEU: garantiert sichtbar
+resultScreen.classList.add('is-visible');
+resultScreen.scrollTop = 0;
 
-      const correctionList = document.getElementById('correction-list');
-      correctionList.innerHTML = '';
+  document.body.style.overflow = 'hidden';
 
-      questions.forEach((q, i) => {
-        const p = document.createElement('p');
-        const isCorrect = userAnswers[i] === q.correct;
-        const status = isCorrect ? "✅ Richtig" : `❌ Falsch – Richtige Antwort: ${q.options[q.correct]}`;
-        p.innerHTML = `<strong>Frage ${i + 1}:</strong> ${q.text.replace("___", "_____")}<br>${status}`;
-        correctionList.appendChild(p);
-      });
-    }
+  const scoreText = document.getElementById('score-text');
+  scoreText.textContent = `Du hast ${score} von ${questions.length} richtig.`;
 
-    function restartQuiz() {
-      currentQuestion = 0;
-      score = 0;
-      incorrectAnswers = [];
-      userAnswers = [];
+  const correctionList = document.getElementById('correction-list');
+  correctionList.innerHTML = '';
 
-      document.querySelector('.result-screen').style.display = 'none';
-      document.querySelector('.start-screen').style.display = 'flex';
-      document.body.style.overflow = 'hidden'; // ✨ Scrollen wieder deaktivieren
-    }
+  questions.forEach((q, i) => {
+    const p = document.createElement('p');
+    const isCorrect = userAnswers[i] === q.correct;
+    const status = isCorrect ? "✅ Richtig" : `❌ Falsch – Richtige Antwort: ${q.options[q.correct]}`;
+    p.innerHTML = `<strong>Frage ${i + 1}:</strong> ${q.text.replace("___", "_____")}<br>${status}`;
+    correctionList.appendChild(p);
+  });
+}
+
+
+function restartQuiz() {
+  // ✅ Zustand komplett zurücksetzen
+  currentQuestion = 0;
+  score = 0;
+  incorrectAnswers = [];
+  userAnswers = [];
+
+  // ✅ Ergebnis-Seite wirklich weg
+  const resultScreen = document.querySelector('.result-screen');
+  resultScreen.classList.remove('is-visible');
+  resultScreen.style.display = 'none';   // ✅ jetzt ok, weil showResult später 'flex' setzt
+  resultScreen.scrollTop = 0;
+
+  // ✅ Mail beim Neustart wieder erlauben
+  startNotified = false;
+  startEventId = null;
+
+  // ✅ Progress zurücksetzen
+  document.getElementById('progress-bar').style.width = '0%';
+  document.getElementById('progress-text').textContent = '';
+
+  // ✅ Neustart soll sich wie "neu starten" anfühlen:
+  //    -> direkt wieder ins Quiz starten (inkl. Mail)
+  startQuiz();
+}
+
 
     // Swipe gesture support
     let touchStartX = 0;
