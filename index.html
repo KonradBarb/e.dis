@@ -267,71 +267,97 @@
 
 const questions =
 [
-  { "text": "der Kaiser", "options": ["король", "імператор"], "correct": 1 },
-  { "text": "das Kaiserreich", "options": ["імперія", "королівство"], "correct": 0 },
-  { "text": "der Zar", "options": ["президент", "цар"], "correct": 1 },
-  { "text": "der König", "options": ["імператор", "король"], "correct": 1 },
-  { "text": "das Königreich", "options": ["королівство", "держава"], "correct": 0 },
-  { "text": "das Vereinigte Königreich", "options": ["Сполучене Королівство", "Сполучені Штати"], "correct": 0 },
+  { "text": "ein Alter", "options": ["старість", "вік"], "correct": 1 },
+  { "text": "eine Alte", "options": ["молода жінка", "стара жінка"], "correct": 1 },
+  { "text": "ein Jugendlicher", "options": ["дитина", "підліток"], "correct": 1 },
+  { "text": "eine Jugendliche", "options": ["підлітка", "доросла жінка"], "correct": 0 },
+  { "text": "ein Deutscher", "options": ["австрієць", "німець"], "correct": 1 },
+  { "text": "eine Deutsche", "options": ["німкеня", "швейцарка"], "correct": 0 },
+  { "text": "ein Erwachsener", "options": ["дитина", "дорослий"], "correct": 1 },
+  { "text": "eine Erwachsene", "options": ["доросла жінка", "підлітка"], "correct": 0 },
 
-  { "text": "___ sehe ich den Film, danach lese ich das Buch.", "options": ["Zuerst", "Während"], "correct": 0 },
-  { "text": "Ich sehe den Film, ___ ich das Buch lese.", "options": ["bevor", "danach"], "correct": 0 },
-  { "text": "Ich sehe den Film, nachdem ich das Buch ___.", "options": ["gelesen habe", "lese"], "correct": 0 },
-  { "text": "Während ich lerne, höre ich Musik. → Das ist ein", "options": ["Nebensatz", "Hauptsatz"], "correct": 0 },
-  { "text": "Zum ersten Mal habe ich Berlin ___.", "options": ["besucht", "besuche"], "correct": 0 },
-  { "text": "Zum letzten Mal ___ ich ihn im Jahr 2020 gesehen.", "options": ["habe", "bin"], "correct": 0 },
-  { "text": "Danach bin ich nach Hause ___.", "options": ["gegangen", "gehen"], "correct": 0 },
-  { "text": "Im Oktober ___ es oft früher dunkel.", "options": ["wird", "werden"], "correct": 0 },
+  { "text": "die Bedingung", "options": ["наслідок", "умова"], "correct": 1 },
+  { "text": "zweisprachig", "options": ["одномовний", "двомовний"], "correct": 1 },
+  { "text": "einsprachig", "options": ["одномовний", "багатомовний"], "correct": 0 },
+  { "text": "dreisprachig", "options": ["двомовний", "тримовний"], "correct": 1 },
+  { "text": "mehrsprachig", "options": ["багатомовний", "одномовний"], "correct": 0 },
+  { "text": "deutschsprachig", "options": ["англомовний", "німецькомовний"], "correct": 1 },
+  { "text": "englischsprachig", "options": ["англомовний", "франкомовний"], "correct": 0 },
 
-  { "text": "fernsehen", "options": ["дивитися телевізор", "слухати музику"], "correct": 0 },
-  { "text": "Ich habe den ganzen Abend ___.", "options": ["ferngesehen", "fernsehen"], "correct": 0 },
-  { "text": "Ich möchte mit dir heute Abend ___.", "options": ["fernsehen", "ferngesehen"], "correct": 0 },
+  { "text": "das Volk", "options": ["держава", "народ"], "correct": 1 },
+  { "text": "die Hölle", "options": ["пекло", "рай"], "correct": 0 },
+  { "text": "sich etwas vorstellen können", "options": ["щось забути", "могти собі щось уявити"], "correct": 1 },
 
-  { "text": "Staub saugen", "options": ["пилососити", "мити підлогу"], "correct": 0 },
-  { "text": "Ich habe gestern die Wohnung komplett ___.", "options": ["gesaugt", "saugen"], "correct": 0 },
-  { "text": "Ich möchte, dass du heute noch ___.", "options": ["staubsaugst", "staubsaugen"], "correct": 0 },
+  { "text": "die Trauer", "options": ["радість", "скорбота"], "correct": 1 },
+  { "text": "um jemanden trauern", "options": ["радіти за когось", "сумувати за кимось"], "correct": 1 },
+  { "text": "jemanden anerkennen", "options": ["ігнорувати", "офіційно визнати"], "correct": 1 },
 
-  { "text": "pfeifen", "options": ["свистіти", "кричати"], "correct": 0 },
-  { "text": "Er hat vor Freude laut ___.", "options": ["gepfiffen", "pfeifen"], "correct": 0 },
+  { "text": "Man ___ mich an.", "options": ["erkenne", "erkennt"], "correct": 1 },
+  { "text": "Ich werde ___.", "options": ["anerkennen", "anerkannt"], "correct": 1 },
 
-  { "text": "auf dem Ku’damm", "options": ["richtig (Ort, Dativ)", "falsch"], "correct": 0 },
-  { "text": "auf den Ku’damm", "options": ["falsch", "richtig (Richtung, Akkusativ)"], "correct": 1 },
+  { "text": "Ich zog 2022 nach Berlin ___.", "options": ["ein", "um"], "correct": 1 },
+  { "text": "Präteritum von „umziehen“:", "options": ["ziehe um", "zog um"], "correct": 1 },
+  { "text": "Perfekt von „umziehen“:", "options": ["habe umgezogen", "bin umgezogen"], "correct": 1 },
 
-  { "text": "die Gedächtniskirche", "options": ["Меморіальна церква", "музей"], "correct": 0 },
-  { "text": "sich etwas anschauen", "options": ["щось оглядати", "щось купувати"], "correct": 0 },
-  { "text": "zeigen", "options": ["показувати", "ховати"], "correct": 0 },
-  { "text": "Austern", "options": ["устриці", "равлики"], "correct": 0 },
+  { "text": "Präteritum von „sterben“:", "options": ["stirbte", "starb"], "correct": 1 },
+  { "text": "Perfekt von „sterben“:", "options": ["habe gestorben", "bin gestorben"], "correct": 1 },
+  { "text": "Wann ___ Beethoven?", "options": ["ist gestorben", "starb"], "correct": 1 },
 
-  { "text": "(sich) vergiften", "options": ["отруїтися", "вилікуватися"], "correct": 0 },
-  { "text": "das Zentrum", "options": ["центр", "околиця"], "correct": 0 },
-  { "text": "sich anziehen", "options": ["одягатися", "роздягатися"], "correct": 0 },
+  { "text": "Präteritum von „gründen“:", "options": ["gründete sich", "gründete"], "correct": 1 },
+  { "text": "Perfekt von „gründen“:", "options": ["bin gegründet", "habe gegründet"], "correct": 1 },
 
-  { "text": "Ich ziehe ___ eine Jacke an, weil es kalt ist.", "options": ["mir", "mich"], "correct": 0 },
-  { "text": "Ich wasche ___ die Hände, bevor wir essen.", "options": ["mir", "mich"], "correct": 0 },
-  { "text": "Er hat sich schnell ___.", "options": ["angezogen", "anziehen"], "correct": 0 },
+  { "text": "Präteritum von „rasieren (sich)“:", "options": ["rasierte", "rasierte mich"], "correct": 1 },
+  { "text": "Perfekt von „rasieren (sich)“:", "options": ["bin rasiert", "habe mich rasiert"], "correct": 1 },
 
-  { "text": "das Ereignis", "options": ["подія", "план"], "correct": 0 },
-  { "text": "saugen (an der Brust)", "options": ["смоктати", "кусати"], "correct": 0 },
-  { "text": "staubsaugen", "options": ["пилососити", "підмітати"], "correct": 0 },
+  { "text": "Präteritum von „schneiden“:", "options": ["schnitt", "schneidete"], "correct": 0 },
+  { "text": "Perfekt von „schneiden“:", "options": ["bin geschnitten", "habe geschnitten"], "correct": 1 },
 
-  { "text": "(durch ein Buch) blättern", "options": ["гортати сторінки", "писати книгу"], "correct": 0 },
-  { "text": "der Arztkittel", "options": ["лікарський халат", "піджак"], "correct": 0 },
-  { "text": "das Blatt", "options": ["аркуш / листок", "книга"], "correct": 0 },
-  { "text": "die Blätter", "options": ["листя / аркуші", "квіти"], "correct": 0 },
+  { "text": "Präteritum von „fallen“:", "options": ["fallte", "fiel"], "correct": 1 },
+  { "text": "Perfekt von „fallen“:", "options": ["bin gefallen", "habe gefallen"], "correct": 0 },
 
-  { "text": "Er war ___ ein gutes Vorbild.", "options": ["mir", "mich"], "correct": 0 },
-  { "text": "Er war mir ein ___ Vorbild.", "options": ["gutes", "guter"], "correct": 0 },
-  { "text": "Sein Vater war ihm kein ___ Vorbild.", "options": ["gutes", "guter"], "correct": 0 },
+  { "text": "Präteritum von „fliegen“:", "options": ["fliegte", "flog"], "correct": 1 },
+  { "text": "Perfekt von „fliegen“:", "options": ["bin geflogen", "habe geflogen"], "correct": 0 },
 
-  { "text": "ein Jugendlicher", "options": ["підліток", "дорослий"], "correct": 0 },
-  { "text": "die Jugendlichen", "options": ["підлітки", "діти"], "correct": 0 },
-  { "text": "die Jugend", "options": ["молодь", "старість"], "correct": 0 },
-  { "text": "die Behinderung", "options": ["інвалідність", "професія"], "correct": 0 }
+  { "text": "Präteritum von „kennen“:", "options": ["kennte", "kannte"], "correct": 1 },
+  { "text": "Perfekt von „kennen“:", "options": ["bin gekannt", "habe gekannt"], "correct": 1 },
+
+  { "text": "Ich ___ dieses Land nicht an.", "options": ["erkennte", "erkenne"], "correct": 1 },
+  { "text": "Präteritum von „anerkennen“:", "options": ["erkannte", "erkannte an"], "correct": 1 },
+  { "text": "Perfekt von „anerkennen“:", "options": ["bin anerkannt", "habe anerkannt"], "correct": 1 },
+
+  { "text": "Präteritum von „enden“:", "options": ["endte", "endete"], "correct": 1 },
+  { "text": "Perfekt von „enden“:", "options": ["ist geendet", "hat geendet"], "correct": 1 },
+
+  { "text": "Präteritum von „beenden“:", "options": ["beendete", "beendte"], "correct": 0 },
+  { "text": "Perfekt von „beenden“:", "options": ["bin beendet", "habe beendet"], "correct": 1 },
+
+  { "text": "rasiert", "options": ["втомлений", "поголений"], "correct": 1 },
+  { "text": "reagiert", "options": ["проігнорував", "відреагував"], "correct": 1 },
+  { "text": "komponiert", "options": ["зіграний", "скомпонований"], "correct": 1 },
+  { "text": "musizieren", "options": ["малювати", "музикувати"], "correct": 1 },
+
+  { "text": "Ich nehme Urlaub.", "options": ["Я працюю", "Я беру відпустку"], "correct": 1 },
+  { "text": "sich entspannen", "options": ["поспішати", "розслаблятися"], "correct": 1 },
+  { "text": "der Spa-Bereich", "options": ["спортзал", "спа-зона"], "correct": 1 },
+  { "text": "die Sauna", "options": ["басейн", "сауна"], "correct": 1 },
+
+  { "text": "sich pflegen", "options": ["ігнорувати себе", "доглядати за собою"], "correct": 1 },
+  { "text": "etwas pflegen", "options": ["ламати", "доглядати щось"], "correct": 1 },
+  { "text": "Sie lassen ihre Nägel ___.", "options": ["pflegen sich", "pflegen"], "correct": 1 },
+
+  { "text": "über etwas verfügen", "options": ["втрачати", "мати в розпорядженні"], "correct": 1 },
+  { "text": "Präsens von „beraten“ (er):", "options": ["beratet", "berät"], "correct": 1 }
 ]
 
 
 
 
+
+
+
+
+
+  
 
 
   
