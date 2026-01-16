@@ -267,335 +267,187 @@
 
 const questions =
 [
+  {
+    "text": "Die Braut wurde …",
+    "options": [
+      "von meiner Oma gesungen.",
+      "von einem Kinderchor dekoriert.",
+      "von vielen Hochzeitsgästen fotografiert."
+    ],
+    "correct": 2
+  },
+  {
+    "text": "Der Karnevalsumzug wurde …",
+    "options": [
+      "von den Narren veranstaltet.",
+      "von meiner Oma gebacken.",
+      "von den Mitarbeitern gesungen."
+    ],
+    "correct": 0
+  },
+  {
+    "text": "Diese leckeren Plätzchen wurden …",
+    "options": [
+      "von der Stadt getragen.",
+      "von meiner Oma gebacken.",
+      "von einem Kinderchor ausgepackt."
+    ],
+    "correct": 1
+  },
+  {
+    "text": "Das Lied wurde …",
+    "options": [
+      "von den Mitarbeitern dekoriert.",
+      "von einem Kinderchor gesungen.",
+      "von der Stadt versteckt."
+    ],
+    "correct": 1
+  },
+  {
+    "text": "Die Büros wurden …",
+    "options": [
+      "von den Narren getragen.",
+      "von den Mitarbeitern weihnachtlich dekoriert.",
+      "von meiner Oma fotografiert."
+    ],
+    "correct": 1
+  },
+  {
+    "text": "Die Eier wurden …",
+    "options": [
+      "von vielen Hochzeitsgästen ausgepackt.",
+      "von der Stadt gebacken.",
+      "vom Osterhasen im Garten versteckt."
+    ],
+    "correct": 2
+  },
+  {
+    "text": "Die Kostüme wurden …",
+    "options": [
+      "von den Narren getragen.",
+      "von einem Kinderchor gesungen.",
+      "von meiner Oma dekoriert."
+    ],
+    "correct": 0
+  },
+  {
+    "text": "Die Geschenke wurden …",
+    "options": [
+      "von der Stadt veranstaltet.",
+      "von den Kindern schnell ausgepackt.",
+      "von den Mitarbeitern gebacken."
+    ],
+    "correct": 1
+  },
+  {
+    "text": "Vor dem Fest ___ noch vieles ___ werden.",
+    "options": ["hatte / getan", "musste / erledigt"],
+    "correct": 1
+  },
+  {
+    "text": "Die Gästeliste ___ noch ___ werden.",
+    "options": ["wurde / schreiben", "musste / geschrieben"],
+    "correct": 1
+  },
+  {
+    "text": "Das Lokal ___ vorher ___ worden.",
+    "options": ["ist / ausgesucht", "hat / auswählen"],
+    "correct": 0
+  },
+  {
+    "text": "Die Blumen ___ bis um zehn Uhr ___ werden.",
+    "options": ["mussten / liefern", "sollten / geliefert"],
+    "correct": 1
+  },
+  {
+    "text": "Ab zwölf Uhr ___ Musik ___.",
+    "options": ["wurde / gespielt", "ist / spielen"],
+    "correct": 0
+  },
+  {
+    "text": "Die Blumen ___ von den Blumenkindern ___.",
+    "options": ["haben / streuen", "wurden / gestreut"],
+    "correct": 1
+  },
+  {
+    "text": "Der Brautschuh ___ von den Kindern ___ werden.",
+    "options": ["konnte / stehlen", "durfte / gestohlen"],
+    "correct": 1
+  },
+  {
+    "text": "Das Brautkleid ___ von der Braut ___.",
+    "options": ["wurde / anprobiert", "hat / anprobieren"],
+    "correct": 0
+  },
+  {
+    "text": "Das Brautkleid ___ vom Bräutigam nicht ___ werden.",
+    "options": ["musste / sehen", "durfte / gesehen"],
+    "correct": 1
+  },
+  {
+    "text": "Die Ringe ___ im Schmuckgeschäft ___ worden.",
+    "options": ["sind / abgeholt", "haben / abholen"],
+    "correct": 0
+  },
+  {
+    "text": "Die Trauung ___ ___ werden.",
+    "options": ["konnte / fotografieren", "durfte / fotografiert"],
+    "correct": 1
+  },
+  {
+    "text": "Die Hochzeitsfotos ___ den Gästen ___.",
+    "options": ["haben / zeigen", "wurden / gezeigt"],
+    "correct": 1
+  },
+  { "text": "der Nacken", "options": ["шия (потилиця)", "плече"], "correct": 0 },
+  { "text": "die Nackenschmerzen", "options": ["біль у шиї", "біль у животі"], "correct": 0 },
+  { "text": "Seit wann tut dir der Nacken ___?", "options": ["weh", "weht"], "correct": 0 },
+  { "text": "zum Arzt", "options": ["до лікаря", "до школи"], "correct": 0 },
 
-  {
-    "text": "der Vorteil",
-    "options": ["перевага", "недолік"],
-    "correct": 0
-  },
-  {
-    "text": "die Vorteile",
-    "options": ["переваги", "ризики"],
-    "correct": 0
-  },
-  {
-    "text": "der Nachteil",
-    "options": ["недолік", "можливість"],
-    "correct": 0
-  },
-  {
-    "text": "die Nachteile",
-    "options": ["недоліки", "переваги"],
-    "correct": 0
-  },
-  {
-    "text": "etwas ermöglichen",
-    "options": ["щось уможливлювати", "щось забороняти"],
-    "correct": 0
-  },
-  {
-    "text": "auf deine Wünsche eingehen",
-    "options": ["враховувати твої побажання", "ігнорувати твої бажання"],
-    "correct": 0
-  },
-  {
-    "text": "Ich gehe auf deine Wünsche ___.",
-    "options": ["ein", "an"],
-    "correct": 0
-  },
-  {
-    "text": "lügen",
-    "options": ["брехати", "довіряти"],
-    "correct": 0
-  },
-  {
-    "text": "Er hat ___.",
-    "options": ["gelogen", "lügen"],
-    "correct": 0
-  },
-  {
-    "text": "lächerlich",
-    "options": ["смішний / безглуздий", "серйозний"],
-    "correct": 0
-  },
-  {
-    "text": "die gefälschte Krankschreibung",
-    "options": ["підроблений лікарняний", "офіційний документ"],
-    "correct": 0
-  },
-  {
-    "text": "von etwas etwas wissen",
-    "options": ["щось знати про щось", "щось забувати"],
-    "correct": 0
-  },
-  {
-    "text": "Davon weiß ich ___.",
-    "options": ["nichts", "nicht"],
-    "correct": 0
-  },
-  {
-    "text": "Von diesem Thema weiß ich ___.",
-    "options": ["nichts", "nicht"],
-    "correct": 0
-  },
-  {
-    "text": "jemanden beruhigen",
-    "options": ["заспокоювати когось", "нервувати когось"],
-    "correct": 0
-  },
-  {
-    "text": "Sie muss ___ werden.",
-    "options": ["beruhigt", "beruhigen"],
-    "correct": 0
-  },
-  {
-    "text": "wegnehmen",
-    "options": ["забирати", "давати"],
-    "correct": 0
-  },
-  {
-    "text": "Ich habe alles ___.",
-    "options": ["weggenommen", "wegnehmen"],
-    "correct": 0
-  },
+  { "text": "Ich kann gehen und ___ .", "options": ["warten", "wartet"], "correct": 0 },
 
-  {
-    "text": "der Polterabend",
-    "options": ["вечір перед весіллям з биттям посуду", "весільна церемонія"],
-    "correct": 0
-  },
-  {
-    "text": "Scherben bringen Glück",
-    "options": ["черепки приносять щастя", "скло приносить нещастя"],
-    "correct": 0
-  },
-  {
-    "text": "böse Geister vertreiben",
-    "options": ["виганяти злих духів", "запрошувати гостей"],
-    "correct": 0
-  },
-  {
-    "text": "Böse Geister werden ___.",
-    "options": ["vertrieben", "vertreiben"],
-    "correct": 0
-  },
-  {
-    "text": "Porzellan zertrümmern",
-    "options": ["розбивати порцеляну", "прибирати"],
-    "correct": 0
-  },
-  {
-    "text": "der Bräutigam",
-    "options": ["наречений", "гість"],
-    "correct": 0
-  },
-  {
-    "text": "die Braut",
-    "options": ["наречена", "свідок"],
-    "correct": 0
-  },
-  {
-    "text": "die Braut auslösen",
-    "options": ["викупити наречену", "загубити наречену"],
-    "correct": 0
-  },
-  {
-    "text": "Trauung feiern",
-    "options": ["святкувати шлюб", "подавати документи"],
-    "correct": 0
-  },
+  { "text": "das Kostüm", "options": ["костюм (карнавальний)", "пальто"], "correct": 0 },
+  { "text": "die Kostüme", "options": ["костюми", "сукні"], "correct": 0 },
 
-  {
-    "text": "Der Kaffee ___ getrunken.",
-    "options": ["wird", "ist"],
-    "correct": 0
-  },
-  {
-    "text": "Der Kaffee muss ___ werden.",
-    "options": ["getrunken", "trinken"],
-    "correct": 0
-  },
-  {
-    "text": "Der Kaffee ___ getrunken.",
-    "options": ["wurde", "wird"],
-    "correct": 0
-  },
-  {
-    "text": "Der Kaffee ist getrunken ___.",
-    "options": ["worden", "werden"],
-    "correct": 0
-  },
+  { "text": "aufsammeln", "options": ["збирати (підбирати)", "кидати"], "correct": 0 },
 
-  {
-    "text": "Die Menschen tanzen. Es ___ getanzt.",
-    "options": ["wird", "werden"],
-    "correct": 0
-  },
-  {
-    "text": "Burger werden ___.",
-    "options": ["gegessen", "essen"],
-    "correct": 0
-  },
-  {
-    "text": "Es werden Burger ___.",
-    "options": ["gegessen", "essen"],
-    "correct": 0
-  },
-  {
-    "text": "In der Kirche ___ getanzt.",
-    "options": ["wird", "werden"],
-    "correct": 0
-  },
-  {
-    "text": "Der Brief ___ gestern geschrieben.",
-    "options": ["ist", "wurde"],
-    "correct": 1
-  },
-  {
-    "text": "Das Haus ___ letztes Jahr gebaut.",
-    "options": ["wurde", "wird"],
-    "correct": 0
-  },
-  {
-    "text": "Die Tür ___ gestern geschlossen.",
-    "options": ["ist", "wurde"],
-    "correct": 1
-  },
-  {
-    "text": "Der Vertrag ___ gestern unterschrieben.",
-    "options": ["wurde", "ist"],
-    "correct": 0
-  },
-  {
-    "text": "Der Film ___ schon gesehen.",
-    "options": ["ist", "wurde"],
-    "correct": 0
-  },
-  {
-    "text": "Die Rechnung ___ bereits bezahlt.",
-    "options": ["wurde", "ist"],
-    "correct": 1
-  },
-  {
-    "text": "Der Text ___ gestern korrigiert worden.",
-    "options": ["wurde", "ist"],
-    "correct": 1
-  },
-  {
-    "text": "Das Problem ___ schnell gelöst worden.",
-    "options": ["ist", "wurde"],
-    "correct": 0
-  },
-  {
-    "text": "Das Auto ___ repariert.",
-    "options": ["wurde", "ist"],
-    "correct": 1
-  },
-  {
-    "text": "Die Gäste ___ begrüßt.",
-    "options": ["sind", "wurden"],
-    "correct": 1
-  },
+  { "text": "die Bildung", "options": ["освіта", "здоров'я"], "correct": 0 },
+  { "text": "eine Bildungseinrichtung", "options": ["освітній заклад", "лікарня"], "correct": 0 },
 
-  {
-    "text": "Der Müll ___ heute getrennt werden.",
-    "options": ["muss", "wird"],
-    "correct": 0
-  },
-  {
-    "text": "Die Aufgabe ___ noch erledigt werden.",
-    "options": ["ist", "muss"],
-    "correct": 1
-  },
-  {
-    "text": "Das Formular ___ ausgefüllt werden.",
-    "options": ["muss", "wurde"],
-    "correct": 0
-  },
-  {
-    "text": "Die Regeln ___ eingehalten werden.",
-    "options": ["werden", "müssen"],
-    "correct": 1
-  },
-  {
-    "text": "Der Raum ___ sauber gemacht werden.",
-    "options": ["muss", "wird"],
-    "correct": 0
-  },
+  { "text": "etwas entzünden", "options": ["підпалити / запалити (щось)", "загасити"], "correct": 0 },
+  { "text": "etwas anzünden", "options": ["запалити (щось)", "прибрати"], "correct": 0 },
+  { "text": "sich eine Zigarette anzünden", "options": ["запалити собі сигарету", "загасити сигарету"], "correct": 0 },
+  { "text": "das Feuerzeug", "options": ["запальничка", "сірник"], "correct": 0 },
 
-  {
-    "text": "Der Fehler ___ sofort behoben werden.",
-    "options": ["muss", "musste"],
-    "correct": 1
-  },
-  {
-    "text": "Die Sitzung ___ abgesagt werden.",
-    "options": ["musste", "muss"],
-    "correct": 0
-  },
-  {
-    "text": "Die Straße ___ gesperrt werden.",
-    "options": ["wird", "musste"],
-    "correct": 1
-  },
-  {
-    "text": "Der Patient ___ operiert werden.",
-    "options": ["ist", "musste"],
-    "correct": 1
-  },
-  {
-    "text": "Die Rechnung ___ sofort bezahlt werden.",
-    "options": ["musste", "muss"],
-    "correct": 0
-  },
+  { "text": "Passiv Präsens: Ich ___ gegrüßt.", "options": ["werde", "wurde"], "correct": 0 },
+  { "text": "Passiv Präteritum: Ich ___ gegrüßt.", "options": ["wurde", "werde"], "correct": 0 },
+  { "text": "Passiv Perfekt: Ich bin gegrüßt ___.", "options": ["worden", "werden"], "correct": 0 },
 
-  {
-    "text": "Der Bericht ___ geschrieben werden müssen.",
-    "options": ["ist", "hat"],
-    "correct": 1
-  },
-  {
-    "text": "Die Entscheidung ___ getroffen werden müssen.",
-    "options": ["hat", "ist"],
-    "correct": 0
-  },
-  {
-    "text": "Das Problem ___ gelöst werden müssen.",
-    "options": ["hat", "wurde"],
-    "correct": 0
-  },
-  {
-    "text": "Die Aufgabe ___ erledigt werden müssen.",
-    "options": ["ist", "hat"],
-    "correct": 1
-  },
-  {
-    "text": "Der Vertrag ___ unterschrieben werden müssen.",
-    "options": ["wurde", "hat"],
-    "correct": 1
-  },
+  { "text": "Ich ___ gegrüßt werden. (Modalverb: müssen)", "options": ["muss", "musste"], "correct": 0 },
+  { "text": "Ich ___ gegrüßt werden. (Modalverb: dürfen, Präteritum)", "options": ["durfte", "darf"], "correct": 0 },
 
-  {
-    "text": "Die Fenster ___ geputzt werden müssen.",
-    "options": ["sind", "haben"],
-    "correct": 1
-  },
-  {
-    "text": "Die Gäste ___ informiert werden müssen.",
-    "options": ["haben", "sind"],
-    "correct": 0
-  },
-  {
-    "text": "Die Dokumente ___ vorbereitet werden müssen.",
-    "options": ["wurden", "haben"],
-    "correct": 1
-  },
-  {
-    "text": "Die Regeln ___ erklärt werden müssen.",
-    "options": ["sind", "haben"],
-    "correct": 1
-  }
+  { "text": "Was wird im Büro gemacht bei BSBI? (Übersetzung)", "options": ["Що роблять в офісі в BSBI?", "Коли BSBI відкривається?"], "correct": 0 },
+  { "text": "Was muss gemacht werden? (Übersetzung)", "options": ["Що потрібно зробити?", "Що вже зробили?"], "correct": 0 },
+  { "text": "Was wurde gestern in deinem Haushalt gemacht? (Übersetzung)", "options": ["Що вчора було зроблено у твоєму домогосподарстві?", "Що завтра буде зроблено у твоєму домогосподарстві?"], "correct": 0 },
+
+  { "text": "der Feiertag", "options": ["святковий день", "будній день"], "correct": 0 },
+  { "text": "die Feier", "options": ["святкування", "суперечка"], "correct": 0 },
+  { "text": "das Fest", "options": ["свято", "іспит"], "correct": 0 },
+  { "text": "der Brauch", "options": ["звичай", "випадок"], "correct": 0 },
+
+  { "text": "In Deutschland ist es bei der Hochzeit Brauch, die Braut zu ___.", "options": ["entführen", "entzünden"], "correct": 0 },
+  { "text": "Bei Purim ist es Brauch, dass … (Übersetzung)", "options": ["На Пурім є звичай, що…", "На Пурім заборонено, що…"], "correct": 0 },
+
+  { "text": "der Umzug", "options": ["парад / хода", "урок"], "correct": 0 },
+  { "text": "Bonbons", "options": ["цукерки", "яблука"], "correct": 0 },
+  { "text": "Süßigkeiten", "options": ["солодощі", "овочі"], "correct": 0 },
+
+  { "text": "sich versammeln", "options": ["збиратися (гуртом)", "розходитися"], "correct": 0 },
+  { "text": "die Schaufel", "options": ["лопата", "щітка"], "correct": 0 },
+  { "text": "die Glut", "options": ["жар / розжарене вугілля", "лід"], "correct": 0 },
+  { "text": "die Stimmung", "options": ["настрій", "погода"], "correct": 0 }
 ]
+
 
 
 
