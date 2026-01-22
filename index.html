@@ -267,187 +267,78 @@
 
 const questions =
 [
+  { "text": "unmöglich", "options": ["неможливо", "необережно"], "correct": 0 },
+  { "text": "etwas Leichtes", "options": ["щось легке", "щось важливе"], "correct": 0 },
+  { "text": "etwas Kleines", "options": ["щось маленьке", "щось нове"], "correct": 0 },
+  { "text": "etwas Unwichtiges", "options": ["щось неважливе", "щось складне"], "correct": 0 },
+  { "text": "sich selbstständig machen", "options": ["відкрити власну справу", "змінити роботу"], "correct": 0 },
+
   {
-    "text": "Die Braut wurde …",
-    "options": [
-      "von meiner Oma gesungen.",
-      "von einem Kinderchor dekoriert.",
-      "von vielen Hochzeitsgästen fotografiert."
-    ],
-    "correct": 2
+    "text": "Manchmal träumt er davon, sich ___ zu machen.",
+    "options": ["selbstständig", "selbstständig zu"],
+    "correct": 0
   },
+
+  { "text": "der Finanzplan", "options": ["фінансовий план", "договір про роботу"], "correct": 0 },
+  { "text": "das Übersetzungsbüro", "options": ["перекладацьке бюро", "туристичне агентство"], "correct": 0 },
+  { "text": "Einnahmen und Ausgaben", "options": ["доходи та витрати", "ціни та податки"], "correct": 0 },
+
   {
-    "text": "Der Karnevalsumzug wurde …",
-    "options": [
-      "von den Narren veranstaltet.",
-      "von meiner Oma gebacken.",
-      "von den Mitarbeitern gesungen."
-    ],
+    "text": "Ich schreibe ___ dir.",
+    "options": ["an", "—"],
     "correct": 0
   },
   {
-    "text": "Diese leckeren Plätzchen wurden …",
-    "options": [
-      "von der Stadt getragen.",
-      "von meiner Oma gebacken.",
-      "von einem Kinderchor ausgepackt."
-    ],
+    "text": "Ich schreibe ___ dich.",
+    "options": ["dir", "an"],
     "correct": 1
   },
+
+  { "text": "die Rückkehr", "options": ["повернення", "подорож"], "correct": 0 },
+  { "text": "sich mit etwas beschäftigen", "options": ["займатися чимось", "боятися чогось"], "correct": 0 },
+  { "text": "sich vor etwas fürchten", "options": ["боятися чогось", "чекати на щось"], "correct": 0 },
+
   {
-    "text": "Das Lied wurde …",
-    "options": [
-      "von den Mitarbeitern dekoriert.",
-      "von einem Kinderchor gesungen.",
-      "von der Stadt versteckt."
-    ],
-    "correct": 1
-  },
-  {
-    "text": "Die Büros wurden …",
-    "options": [
-      "von den Narren getragen.",
-      "von den Mitarbeitern weihnachtlich dekoriert.",
-      "von meiner Oma fotografiert."
-    ],
-    "correct": 1
-  },
-  {
-    "text": "Die Eier wurden …",
-    "options": [
-      "von vielen Hochzeitsgästen ausgepackt.",
-      "von der Stadt gebacken.",
-      "vom Osterhasen im Garten versteckt."
-    ],
-    "correct": 2
-  },
-  {
-    "text": "Die Kostüme wurden …",
-    "options": [
-      "von den Narren getragen.",
-      "von einem Kinderchor gesungen.",
-      "von meiner Oma dekoriert."
-    ],
+    "text": "Als Kind habe ich mich vor der Dunkelheit ___.",
+    "options": ["gefürchtet", "gefürchten"],
     "correct": 0
   },
   {
-    "text": "Die Geschenke wurden …",
-    "options": [
-      "von der Stadt veranstaltet.",
-      "von den Kindern schnell ausgepackt.",
-      "von den Mitarbeitern gebacken."
-    ],
-    "correct": 1
+    "text": "Als Kind habe ich mich davor gefürchtet, allein in den Keller ___.",
+    "options": ["zu gehen", "gehe"],
+    "correct": 0
   },
+
+  { "text": "sich auf etwas vorbereiten", "options": ["готуватися до чогось", "залежати від чогось"], "correct": 0 },
+
   {
-    "text": "Vor dem Fest ___ noch vieles ___ werden.",
-    "options": ["hatte / getan", "musste / erledigt"],
-    "correct": 1
-  },
-  {
-    "text": "Die Gästeliste ___ noch ___ werden.",
-    "options": ["wurde / schreiben", "musste / geschrieben"],
-    "correct": 1
-  },
-  {
-    "text": "Das Lokal ___ vorher ___ worden.",
-    "options": ["ist / ausgesucht", "hat / auswählen"],
+    "text": "Seine Entscheidung hängt ___ der Bezahlung ab.",
+    "options": ["von", "auf"],
     "correct": 0
   },
   {
-    "text": "Die Blumen ___ bis um zehn Uhr ___ werden.",
-    "options": ["mussten / liefern", "sollten / geliefert"],
-    "correct": 1
+    "text": "___ hängt seine Entscheidung ab.",
+    "options": ["Wovon", "Woran"],
+    "correct": 0
   },
+
+  { "text": "jemandem etwas beibringen", "options": ["навчити когось чомусь", "пояснювати проблему"], "correct": 0 },
+
   {
-    "text": "Ab zwölf Uhr ___ Musik ___.",
-    "options": ["wurde / gespielt", "ist / spielen"],
+    "text": "Er hat mir beigebracht, Klavier ___.",
+    "options": ["zu spielen", "spiele"],
     "correct": 0
   },
   {
-    "text": "Die Blumen ___ von den Blumenkindern ___.",
-    "options": ["haben / streuen", "wurden / gestreut"],
-    "correct": 1
-  },
-  {
-    "text": "Der Brautschuh ___ von den Kindern ___ werden.",
-    "options": ["konnte / stehlen", "durfte / gestohlen"],
-    "correct": 1
-  },
-  {
-    "text": "Das Brautkleid ___ von der Braut ___.",
-    "options": ["wurde / anprobiert", "hat / anprobieren"],
+    "text": "Jetzt bringe ich mir selbst bei, Klavier besser ___.",
+    "options": ["zu spielen", "spielen"],
     "correct": 0
   },
-  {
-    "text": "Das Brautkleid ___ vom Bräutigam nicht ___ werden.",
-    "options": ["musste / sehen", "durfte / gesehen"],
-    "correct": 1
-  },
-  {
-    "text": "Die Ringe ___ im Schmuckgeschäft ___ worden.",
-    "options": ["sind / abgeholt", "haben / abholen"],
-    "correct": 0
-  },
-  {
-    "text": "Die Trauung ___ ___ werden.",
-    "options": ["konnte / fotografieren", "durfte / fotografiert"],
-    "correct": 1
-  },
-  {
-    "text": "Die Hochzeitsfotos ___ den Gästen ___.",
-    "options": ["haben / zeigen", "wurden / gezeigt"],
-    "correct": 1
-  },
-  { "text": "der Nacken", "options": ["шия (потилиця)", "плече"], "correct": 0 },
-  { "text": "die Nackenschmerzen", "options": ["біль у шиї", "біль у животі"], "correct": 0 },
-  { "text": "Seit wann tut dir der Nacken ___?", "options": ["weh", "weht"], "correct": 0 },
-  { "text": "zum Arzt", "options": ["до лікаря", "до школи"], "correct": 0 },
 
-  { "text": "Ich kann gehen und ___ .", "options": ["warten", "wartet"], "correct": 0 },
-
-  { "text": "das Kostüm", "options": ["костюм (карнавальний)", "пальто"], "correct": 0 },
-  { "text": "die Kostüme", "options": ["костюми", "сукні"], "correct": 0 },
-
-  { "text": "aufsammeln", "options": ["збирати (підбирати)", "кидати"], "correct": 0 },
-
-  { "text": "die Bildung", "options": ["освіта", "здоров'я"], "correct": 0 },
-  { "text": "eine Bildungseinrichtung", "options": ["освітній заклад", "лікарня"], "correct": 0 },
-
-  { "text": "etwas entzünden", "options": ["підпалити / запалити (щось)", "загасити"], "correct": 0 },
-  { "text": "etwas anzünden", "options": ["запалити (щось)", "прибрати"], "correct": 0 },
-  { "text": "sich eine Zigarette anzünden", "options": ["запалити собі сигарету", "загасити сигарету"], "correct": 0 },
-  { "text": "das Feuerzeug", "options": ["запальничка", "сірник"], "correct": 0 },
-
-  { "text": "Passiv Präsens: Ich ___ gegrüßt.", "options": ["werde", "wurde"], "correct": 0 },
-  { "text": "Passiv Präteritum: Ich ___ gegrüßt.", "options": ["wurde", "werde"], "correct": 0 },
-  { "text": "Passiv Perfekt: Ich bin gegrüßt ___.", "options": ["worden", "werden"], "correct": 0 },
-
-  { "text": "Ich ___ gegrüßt werden. (Modalverb: müssen)", "options": ["muss", "musste"], "correct": 0 },
-  { "text": "Ich ___ gegrüßt werden. (Modalverb: dürfen, Präteritum)", "options": ["durfte", "darf"], "correct": 0 },
-
-  { "text": "Was wird im Büro gemacht bei BSBI? (Übersetzung)", "options": ["Що роблять в офісі в BSBI?", "Коли BSBI відкривається?"], "correct": 0 },
-  { "text": "Was muss gemacht werden? (Übersetzung)", "options": ["Що потрібно зробити?", "Що вже зробили?"], "correct": 0 },
-  { "text": "Was wurde gestern in deinem Haushalt gemacht? (Übersetzung)", "options": ["Що вчора було зроблено у твоєму домогосподарстві?", "Що завтра буде зроблено у твоєму домогосподарстві?"], "correct": 0 },
-
-  { "text": "der Feiertag", "options": ["святковий день", "будній день"], "correct": 0 },
-  { "text": "die Feier", "options": ["святкування", "суперечка"], "correct": 0 },
-  { "text": "das Fest", "options": ["свято", "іспит"], "correct": 0 },
-  { "text": "der Brauch", "options": ["звичай", "випадок"], "correct": 0 },
-
-  { "text": "In Deutschland ist es bei der Hochzeit Brauch, die Braut zu ___.", "options": ["entführen", "entzünden"], "correct": 0 },
-  { "text": "Bei Purim ist es Brauch, dass … (Übersetzung)", "options": ["На Пурім є звичай, що…", "На Пурім заборонено, що…"], "correct": 0 },
-
-  { "text": "der Umzug", "options": ["парад / хода", "урок"], "correct": 0 },
-  { "text": "Bonbons", "options": ["цукерки", "яблука"], "correct": 0 },
-  { "text": "Süßigkeiten", "options": ["солодощі", "овочі"], "correct": 0 },
-
-  { "text": "sich versammeln", "options": ["збиратися (гуртом)", "розходитися"], "correct": 0 },
-  { "text": "die Schaufel", "options": ["лопата", "щітка"], "correct": 0 },
-  { "text": "die Glut", "options": ["жар / розжарене вугілля", "лід"], "correct": 0 },
-  { "text": "die Stimmung", "options": ["настрій", "погода"], "correct": 0 }
+  { "text": "ausdrucken", "options": ["друкувати", "видаляти"], "correct": 0 },
+  { "text": "Fortschritte machen", "options": ["робити успіхи", "робити помилки"], "correct": 0 },
+  { "text": "der Fortschritt", "options": ["прогрес", "план"], "correct": 0 }
 ]
-
 
 
 
