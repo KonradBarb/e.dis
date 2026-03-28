@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deutsch Übung</title>
+
   <style>
     html, body {
       margin: 0;
@@ -42,26 +43,71 @@
     }
   </style>
 </head>
+
 <body>
-  <div id="screen">1. Schuhe?/ Tür/ vor/ stellen</div>
+  <div id="screen"></div>
 
   <script>
     const screen = document.getElementById("screen");
 
-    const frageStruktur = "1. Schuhe?/ Tür/ vor/ stellen";
-    const antwort = "Wo sind meine Schuhe? – Ich habe sie vor die Tür gestellt.";
+    const aufgaben = [
+      {
+        frage: "1. Schuhe?/ Tür/ vor/ stellen",
+        antwort: "Wo sind meine Schuhe? – Ich habe sie vor die Tür gestellt."
+      },
+      {
+        frage: "2. Jacke?/ Garderobe/ an/ hängen",
+        antwort: "Wo ist meine Jacke? – Ich habe sie an die Garderobe gehängt."
+      },
+      {
+        frage: "3. Führerschein?/ Brieftasche/ in/ stecken",
+        antwort: "Wo ist mein Führerschein? – Ich habe ihn in die Brieftasche gesteckt."
+      },
+      {
+        frage: "4. Bier?/ Kühlschrank/ in/ stellen",
+        antwort: "Wo ist das Bier? – Ich habe es in den Kühlschrank gestellt."
+      },
+      {
+        frage: "5. Fernbedienung?/ Fernsehtisch/ auf/ legen",
+        antwort: "Wo ist die Fernbedienung? – Ich habe sie auf den Fernsehtisch gelegt."
+      },
+      {
+        frage: "6. Handy?/ Ladestation/ in/ stecken",
+        antwort: "Wo ist mein Handy? – Ich habe es in die Ladestation gesteckt."
+      },
+      {
+        frage: "7. Hemd?/ Waschmaschine/ in/ werfen",
+        antwort: "Wo ist mein Hemd? – Ich habe es in die Waschmaschine geworfen."
+      },
+      {
+        frage: "8. Brille?/ Zeitung/ neben/ legen",
+        antwort: "Wo ist meine Brille? – Ich habe sie neben die Zeitung gelegt."
+      }
+    ];
 
+    let index = 0;
     let zeigtAntwort = false;
+
+    function updateScreen() {
+      if (zeigtAntwort) {
+        screen.textContent = aufgaben[index].antwort;
+      } else {
+        screen.textContent = aufgaben[index].frage;
+      }
+    }
 
     screen.addEventListener("click", () => {
       if (!zeigtAntwort) {
-        screen.textContent = antwort;
         zeigtAntwort = true;
       } else {
-        screen.textContent = frageStruktur;
         zeigtAntwort = false;
+        index = (index + 1) % aufgaben.length;
       }
+      updateScreen();
     });
+
+    // Startanzeige
+    updateScreen();
   </script>
 </body>
 </html>
