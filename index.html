@@ -19,17 +19,40 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
     }
 
-    #screen {
+    /* Allgemeiner Screen */
+    .screen {
       width: 100vw;
       height: 100vh;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       padding: 24px;
       box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* Startscreen */
+    #startScreen {
+      cursor: pointer;
+    }
+
+    #logo {
+      width: 90%;
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+
+    #tapText {
+      font-size: 1.5rem;
+      opacity: 0.6;
+    }
+
+    /* Übungsscreen */
+    #exerciseScreen {
+      display: none;
       font-size: 2rem;
       line-height: 1.4;
       cursor: pointer;
@@ -37,7 +60,7 @@
     }
 
     @media (max-width: 600px) {
-      #screen {
+      #exerciseScreen {
         font-size: 1.8rem;
       }
     }
@@ -45,10 +68,26 @@
 </head>
 
 <body>
-  <div id="screen"></div>
+
+  <!-- STARTSCREEN -->
+  <div id="startScreen" class="screen">
+    <img id="logo" src="LOGO_DEUTSCHTRIP" alt="Logo" />
+    <div id="tapText">TAP TO CONTINUE</div>
+  </div>
+
+  <!-- ÜBUNG -->
+  <div id="exerciseScreen" class="screen"></div>
 
   <script>
-    const screen = document.getElementById("screen");
+    const startScreen = document.getElementById("startScreen");
+    const exerciseScreen = document.getElementById("exerciseScreen");
+
+    // Beim Tap → Startscreen ausblenden, Übung zeigen
+    startScreen.addEventListener("click", () => {
+      startScreen.style.display = "none";
+      exerciseScreen.style.display = "flex";
+      updateScreen();
+    });
 
     const aufgaben = [
       {
@@ -62,26 +101,6 @@
       {
         frage: "3. Führerschein?/ Brieftasche/ in/ stecken",
         antwort: "Wo ist mein Führerschein? – Ich habe ihn in die Brieftasche gesteckt."
-      },
-      {
-        frage: "4. Bier?/ Kühlschrank/ in/ stellen",
-        antwort: "Wo ist das Bier? – Ich habe es in den Kühlschrank gestellt."
-      },
-      {
-        frage: "5. Fernbedienung?/ Fernsehtisch/ auf/ legen",
-        antwort: "Wo ist die Fernbedienung? – Ich habe sie auf den Fernsehtisch gelegt."
-      },
-      {
-        frage: "6. Handy?/ Ladestation/ in/ stecken",
-        antwort: "Wo ist mein Handy? – Ich habe es in die Ladestation gesteckt."
-      },
-      {
-        frage: "7. Hemd?/ Waschmaschine/ in/ werfen",
-        antwort: "Wo ist mein Hemd? – Ich habe es in die Waschmaschine geworfen."
-      },
-      {
-        frage: "8. Brille?/ Zeitung/ neben/ legen",
-        antwort: "Wo ist meine Brille? – Ich habe sie neben die Zeitung gelegt."
       }
     ];
 
@@ -90,13 +109,13 @@
 
     function updateScreen() {
       if (zeigtAntwort) {
-        screen.textContent = aufgaben[index].antwort;
+        exerciseScreen.textContent = aufgaben[index].antwort;
       } else {
-        screen.textContent = aufgaben[index].frage;
+        exerciseScreen.textContent = aufgaben[index].frage;
       }
     }
 
-    screen.addEventListener("click", () => {
+    exerciseScreen.addEventListener("click", () => {
       if (!zeigtAntwort) {
         zeigtAntwort = true;
       } else {
@@ -105,9 +124,6 @@
       }
       updateScreen();
     });
-
-    // Startanzeige
-    updateScreen();
   </script>
 </body>
 </html>
