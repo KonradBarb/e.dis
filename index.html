@@ -16,78 +16,102 @@
     }
 
     body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      overflow: hidden;
     }
 
-    /* Allgemeiner Screen */
     .screen {
       width: 100vw;
       height: 100vh;
-      display: flex;
-      flex-direction: column;
+      display: none;
       justify-content: center;
       align-items: center;
+      text-align: center;
       padding: 24px;
       box-sizing: border-box;
-      text-align: center;
     }
 
-    /* Startscreen */
-    #startScreen {
-      cursor: pointer;
+    .screen.active {
+      display: flex;
     }
 
-    #logo {
-      width: 90%;
-      max-width: 500px;
-      margin-bottom: 40px;
-    }
-
-    #tapText {
-      font-size: 1.5rem;
-      opacity: 0.6;
-    }
-
-    /* Übungsscreen */
-    #exerciseScreen {
-      display: none;
+    #taskScreen {
       font-size: 2rem;
       line-height: 1.4;
       cursor: pointer;
       user-select: none;
     }
 
+    #taskContent {
+      max-width: 900px;
+    }
+
+    #endScreen {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    #endScreen h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    #endScreen p {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .finish-button {
+      padding: 16px 32px;
+      font-size: 1.1rem;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    .finish-button:hover {
+      background-color: #0056b3;
+    }
+
+    .finish-button:disabled {
+      opacity: 0.7;
+      cursor: default;
+    }
+
     @media (max-width: 600px) {
-      #exerciseScreen {
+      #taskScreen {
         font-size: 1.8rem;
+      }
+
+      #endScreen h2 {
+        font-size: 1.6rem;
+      }
+
+      #endScreen p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 
 <body>
-
-  <!-- STARTSCREEN -->
-  <div id="startScreen" class="screen">
-    <img id="logo" src="LOGO_DEUTSCHTRIP.png" alt="Logo" />
-    <div id="tapText">TAP TO CONTINUE</div>
+  <div id="taskScreen" class="screen active">
+    <div id="taskContent"></div>
   </div>
 
-  <!-- ÜBUNG -->
-  <div id="exerciseScreen" class="screen"></div>
+  <div id="endScreen" class="screen">
+    <h2>Super, du hast die komplette Aufgabe gemacht.</h2>
+    <p>Tippe auf den Button in der Mitte, um abzuschließen.</p>
+    <button id="finishButton" class="finish-button">Aufgabe abgeschlossen</button>
+  </div>
 
   <script>
-    const startScreen = document.getElementById("startScreen");
-    const exerciseScreen = document.getElementById("exerciseScreen");
-
-    // Beim Tap → Startscreen ausblenden, Übung zeigen
-    startScreen.addEventListener("click", () => {
-      startScreen.style.display = "none";
-      exerciseScreen.style.display = "flex";
-      updateScreen();
-    });
+    const taskScreen = document.getElementById("taskScreen");
+    const taskContent = document.getElementById("taskContent");
+    const endScreen = document.getElementById("endScreen");
+    const finishButton = document.getElementById("finishButton");
 
     const aufgaben = [
       {
@@ -109,21 +133,87 @@
 
     function updateScreen() {
       if (zeigtAntwort) {
-        exerciseScreen.textContent = aufgaben[index].antwort;
+        taskContent.textContent = aufgaben[index].antwort;
       } else {
-        exerciseScreen.textContent = aufgaben[index].frage;
+        taskContent.textContent = aufgaben[index].frage;
       }
     }
 
-    exerciseScreen.addEventListener("click", () => {
+    function showTaskScreen() {
+      taskScreen.classList.add("active");
+      endScreen.classList.remove("active");
+    }
+
+    function showEndScreen() {
+      taskScreen.classList.remove("active");
+      endScreen.classList.add("active");
+    }
+
+    taskScreen.addEventListener("click", () => {
       if (!zeigtAntwort) {
         zeigtAntwort = true;
       } else {
         zeigtAntwort = false;
-        index = (index + 1) % aufgaben.length;
+
+        if (index < aufgaben.length - 1) {
+          index++;
+          updateScreen();
+        } else {
+          showEndScreen();
+        }
+        return;
       }
+
       updateScreen();
     });
+
+    // =========================
+    // MAIL-MECHANISMUS
+    // =========================
+    let mailPingImg = null;
+    let completionEventId = null;
+    let completionNotified = false;
+
+    function notifyTeacherTaskCompleted() {
+      const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbyLqhiCn9pVFlInvh3wpgDbM77Y15511_NHQVvm71OjoieU2Vs7JL8BBEjcJT2h3GJ7Og/exec";
+      const SECRET = "SxhuleeerQuiz_2025_x98d76_22_MEINSECRET";
+
+      if (!completionEventId) {
+        completionEventId =
+          (window.crypto && window.crypto.randomUUID)
+            ? window.crypto.randomUUID()
+            : Date.now() + "_" + Math.random();
+      }
+
+      const params = new URLSearchParams({
+        secret: SECRET,
+        studentName: "MAX MUSTERSCHÜLER",
+        eventType: "completed",
+        quizTitle: document.title,
+        pageUrl: window.location.href,
+        eventId: completionEventId,
+        cb: Date.now()
+      });
+
+      const url = WEB_APP_URL + "?" + params.toString();
+
+      mailPingImg = new Image();
+      mailPingImg.src = url;
+    }
+
+    finishButton.addEventListener("click", () => {
+      if (!completionNotified) {
+        completionNotified = true;
+        notifyTeacherTaskCompleted();
+      }
+
+      finishButton.disabled = true;
+      finishButton.textContent = "Mail wurde ausgelöst";
+    });
+
+    // Startanzeige
+    showTaskScreen();
+    updateScreen();
   </script>
 </body>
 </html>
